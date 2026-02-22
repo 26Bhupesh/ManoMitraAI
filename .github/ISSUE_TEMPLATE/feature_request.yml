@@ -1,0 +1,65 @@
+name: Feature Request
+description: Suggest an idea for this project
+title: "[FEATURE] "
+labels: ["enhancement"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a feature! Please describe the feature you'd like to see.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature Description
+      description: Clear and concise description of the feature
+      placeholder: "It would be great if the app could..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem/Use Case
+      description: What problem does this solve? Or what's the use case?
+      placeholder: "This would be useful because..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: How should this feature work?
+      placeholder: "The implementation could..."
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any alternative approaches?
+      placeholder: "Other ways to solve this..."
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Which component would this affect?
+      options:
+        - Backend (FastAPI)
+        - Frontend (React)
+        - Emotion Detection
+        - Crisis Management
+        - Screening
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any additional context or resources
+      placeholder: "Links to references, related issues, etc..."
