@@ -1,0 +1,126 @@
+# ===============================
+# Virtual Environments & Package Management
+# ===============================
+# Python
+project/
+venv/
+env/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Node.js & NPM
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ===============================
+# Python Bytecode / Cache
+# ===============================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# ===============================
+# ML / DL Artifacts (NEVER commit - LARGE FILES)
+# ===============================
+# Model files and weights (CRITICAL - can be 100MB+)
+backend/models/
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.h5
+*.ckpt
+*.onnx
+*.pkl
+*.pickle
+*.joblib
+
+# ===============================
+# Build & Distribution Output
+# ===============================
+frontend/dist/
+frontend/dist-ssr/
+backend/build/
+backend/dist/
+*.local
+
+# ===============================
+# Runtime & Session Data
+# ===============================
+backend/session_store.json
+backend/*.log
+*.tmp
+*.pid
+
+# ===============================
+# Environment Variables & Secrets
+# ===============================
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+.env.local
+.env.*.local
+
+# ===============================
+# IDE & Editor Files
+# ===============================
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.code-workspace
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# ===============================
+# OS & System Files
+# ===============================
+.DS_Store
+Thumbs.db
+.AppleDesktop
+$RECYCLE.BIN/
+ehthumbs.db
+Desktop.ini
+.Spotlight-V100
+.Trashes
+
+# ===============================
+# IDE specific files
+# ===============================
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ===============================
+# Logs
+# ===============================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===============================
+# Miscellaneous
+# ===============================
+.cache/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/

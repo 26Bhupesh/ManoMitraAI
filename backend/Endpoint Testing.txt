@@ -1,0 +1,131 @@
+:: Chat TextMessage
+
+curl -X POST "http://127.0.0.1:8000/chat/message" ^
+-F "session_id=demo01" ^
+-F "text=मुझे बहुत चिंता हो रही है"
+
+:: Chat Audio Message
+
+curl -X POST "http://127.0.0.1:8000/chat/message" ^
+-F "session_id=demo01" ^
+-F "audio=@C:\Users\USER\Downloads\Recording.m4a"
+
+:: Text Preprocessing
+
+curl -X POST "http://127.0.0.1:8000/preprocess" ^
+-F "session_id=demo01" ^
+-F "text=मुझे बहुत चिंता हो रही है"
+
+:: Audio Preprocessing
+
+curl -X POST "http://127.0.0.1:8000/preprocess" ^
+-F "session_id=demo01" ^
+-F "audio=@C:\Users\USER\Downloads\Recording.m4a"
+
+:: Text Emotion detection
+
+curl -X POST "http://127.0.0.1:8000/emotion/text" ^
+-H "Content-Type: application/json" ^
+-d "{\"session_id\":\"demo01\",\"text\":\"मुझे बहुत चिंता हो रही है\"}"
+
+:: Voice emotion detection
+
+curl -X POST "http://127.0.0.1:8000/emotion_voice/voice" ^
+-F "session_id=demo01" ^
+-F "audio=@C:\Users\USER\Downloads\Recording.m4a"
+
+:: Video emotion detection
+
+curl -X POST "http://127.0.0.1:8000/video/video_frame" ^
+-F "session_id=demo01" ^
+-F "frame=@C:\Users\USER\Downloads\sad.jpeg"
+
+:: Emotion Fusion Service
+
+curl -X POST "http://127.0.0.1:8000/fusion/demo01"
+
+:: Support service
+
+curl -X POST "http://127.0.0.1:8000/support/respond" ^
+-H "Content-Type: application/json" ^
+-d "{\"session_id\":\"demo01\",\"user_text\":\"मुझे बहुत चिंता हो रही है\"}"
+
+:: Screening Start
+
+curl -X POST "http://127.0.0.1:8000/screening/start" ^
+-H "Content-Type: application/json" ^
+-d "{\"session_id\":\"demo01\"}"
+
+:: Answering Questions
+
+curl -X POST "http://127.0.0.1:8000/screening/answer" ^
+-H "Content-Type: application/json" ^
+-d "{\"session_id\":\"demo01\",\"answer\":1}"
+
+curl -X POST "http://127.0.0.1:8000/screening/answer" ^
+-H "Content-Type: application/json" ^
+-d "{\"session_id\":\"demo01\",\"answer\":2}"
+
+curl -X POST "http://127.0.0.1:8000/screening/answer" ^
+-H "Content-Type: application/json" ^
+-d "{\"session_id\":\"demo01\",\"answer\":3}"
+
+curl -X POST "http://127.0.0.1:8000/screening/answer" ^
+-H "Content-Type: application/json" ^
+-d "{\"session_id\":\"demo01\",\"answer\":3}"
+
+curl -X POST "http://127.0.0.1:8000/screening/answer" ^
+-H "Content-Type: application/json" ^
+-d "{\"session_id\":\"demo01\",\"answer\":2}"
+
+curl -X POST "http://127.0.0.1:8000/screening/answer" ^
+-H "Content-Type: application/json" ^
+-d "{\"session_id\":\"demo01\",\"answer\":3}"
+
+curl -X POST "http://127.0.0.1:8000/screening/answer" ^
+-H "Content-Type: application/json" ^
+-d "{\"session_id\":\"demo01\",\"answer\":1}"
+
+curl -X POST "http://127.0.0.1:8000/screening/answer" ^
+-H "Content-Type: application/json" ^
+-d "{\"session_id\":\"demo01\",\"answer\":1}"
+
+curl -X POST "http://127.0.0.1:8000/screening/answer" ^
+-H "Content-Type: application/json" ^
+-d "{\"session_id\":\"demo01\",\"answer\":2}"
+
+curl -X POST "http://127.0.0.1:8000/screening/answer" ^
+-H "Content-Type: application/json" ^
+-d "{\"session_id\":\"demo01\",\"answer\":2}"
+
+curl -X POST "http://127.0.0.1:8000/screening/answer" ^
+-H "Content-Type: application/json" ^
+-d "{\"session_id\":\"demo01\",\"answer\":3}"
+
+curl -X POST "http://127.0.0.1:8000/screening/answer" ^
+-H "Content-Type: application/json" ^
+-d "{\"session_id\":\"demo01\",\"answer\":2}"
+
+curl -X POST "http://127.0.0.1:8000/screening/answer" ^
+-H "Content-Type: application/json" ^
+-d "{\"session_id\":\"demo01\",\"answer\":1}"
+
+curl -X POST "http://127.0.0.1:8000/screening/answer" ^
+-H "Content-Type: application/json" ^
+-d "{\"session_id\":\"demo01\",\"answer\":1}"
+
+curl -X POST "http://127.0.0.1:8000/screening/answer" ^
+-H "Content-Type: application/json" ^
+-d "{\"session_id\":\"demo01\",\"answer\":2}"
+
+curl -X POST "http://127.0.0.1:8000/screening/answer" ^
+-H "Content-Type: application/json" ^
+-d "{\"session_id\":\"demo01\",\"answer\":1}"
+
+:: Decision Routing
+
+curl -X POST "http://127.0.0.1:8000/route/decide?session_id=demo01
+
+:: Crisis Detection
+
+curl -X POST "http://127.0.0.1:8000/crisis/handle?session_id=demo01
