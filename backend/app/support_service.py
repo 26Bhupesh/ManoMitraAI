@@ -2,15 +2,14 @@ import random
 import logging
 from datetime import datetime, timezone
 from pathlib import Path
-from fastapi import APIRouter, HTTPException
+import fastapi
 from pydantic import BaseModel
 from app.session_state import get_session, update_session
 from groq import Groq
-import os
 
 client = Groq(api_key='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')
 
-router = APIRouter()
+router = fastapi.APIRouter()
 logger = logging.getLogger("support_service")
 logger.setLevel(logging.INFO)
 
@@ -183,11 +182,11 @@ def generate_support_response(req: SupportRequest):
     user_text = req.user_text.strip()
 
     if not user_text:
-        raise HTTPException(status_code=400, detail="Empty user_text")
+        raise fastapi.HTTPException(status_code=400, detail="Empty user_text")
 
     session = get_session(session_id)
     if not session:
-        raise HTTPException(status_code=404, detail="Session not found")
+        raise fastapi.HTTPException(status_code=404, detail="Session not found")
 
     # ---------------- CRISIS INTERCEPT ----------------
 
