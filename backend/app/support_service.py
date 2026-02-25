@@ -4,7 +4,6 @@ from datetime import datetime, timezone
 from pathlib import Path
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from langdetect import detect
 from app.session_state import get_session, update_session
 from groq import Groq
 import os
@@ -70,16 +69,6 @@ CRISIS_KEYWORDS = {
 }
 
 # ---------------- Helpers ----------------
-
-def detect_language_safe(text: str) -> str:
-    try:
-        lang = detect(text)
-        logger.info(f"Detected language: {lang} for text: {text[:30]}...")
-        return lang if lang in ("hi", "mr") else "en"
-    except Exception:
-        logger.info(f"Language detection failed for text: {text[:30]}..., defaulting to English")
-        return "en"
-
 
 def load_knowledge_blocks(filename: str) -> list[str]:
     path = BASE_PATH / filename
@@ -222,7 +211,7 @@ def generate_support_response(req: SupportRequest):
             ),
             emotion_used="concern",
             response_type="immediate_screening",
-            language=detect_language_safe(user_text),
+            language=session.get("last_preprocess", {}).get("value", {}).get("language", "en"),
             timestamp=datetime.now(timezone.utc).isoformat()
         )
 
