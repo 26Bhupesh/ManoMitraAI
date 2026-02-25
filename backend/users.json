@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": "4355533f-2256-4bcf-8d39-3b840a63d303",
+      "username": "bhupesh26",
+      "password": "pass",
+      "name": "Bhupesh Suryawanshi",
+      "date_of_birth": "2004-08-26",
+      "preferred_language": "en",
+      "emergency_contact_name": "Mummy",
+      "emergency_contact_number": "8806215185",
+      "emergency_contact_relation": "Mother",
+      "created_at": "2026-02-25T05:33:06.895157"
+    }
+  ]
+}

@@ -11,7 +11,7 @@ const resources = {
   mr: { translation: mr }
 };
 
-const savedLanguage = localStorage.getItem("ui_language") || "en";
+const savedLanguage = localStorage.getItem("manomitra_language") || "en";
 
 i18n
   .use(initReactI18next)

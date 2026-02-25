@@ -5,12 +5,34 @@ import type {
   ScreeningAnswerResponse,
   RouteResponse,
   CrisisResponse,
+  AuthResponse,
+  RegisterRequest,
+  LoginCredentials,
 } from "./types";
 
 const API = axios.create({
   baseURL: "http://127.0.0.1:8000",
 });
 
+// ============ AUTHENTICATION ============
+export async function register(userData: RegisterRequest): Promise<AuthResponse> {
+  const { data } = await API.post<AuthResponse>("/auth/register", userData);
+  return data;
+}
+
+export async function login(credentials: LoginCredentials): Promise<AuthResponse> {
+  const { data } = await API.post<AuthResponse>("/auth/login", credentials);
+  return data;
+}
+
+export async function logout(sessionId: string): Promise<AuthResponse> {
+  const { data } = await API.post<AuthResponse>("/auth/logout", {
+    session_id: sessionId,
+  });
+  return data;
+}
+
+// ============ CHAT ============
 export async function sendChatMessage(
   sessionId: string,
   text?: string,
@@ -71,3 +93,4 @@ export async function crisisHandle(
   );
   return data;
 }
+

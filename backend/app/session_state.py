@@ -65,3 +65,57 @@ def clear_all_sessions():
     with lock:
         _save_store({})
         logger.warning("All sessions cleared.")
+
+def authenticate_session(session_id: str, user_id: str, preferred_language: str):
+    """Mark a session as authenticated and link to a user."""
+    with lock:
+        store = _load_store()
+        if session_id not in store:
+            store[session_id] = {}
+        store[session_id]["user_id"] = {
+            "value": user_id,
+            "updated_at": datetime.utcnow().isoformat(),
+        }
+        store[session_id]["is_authenticated"] = {
+            "value": True,
+            "updated_at": datetime.utcnow().isoformat(),
+        }
+        store[session_id]["preferred_language"] = {
+            "value": preferred_language,
+            "updated_at": datetime.utcnow().isoformat(),
+        }
+        _save_store(store)
+        logger.info(f"Session authenticated: {session_id} -> user_id={user_id}")
+
+def is_session_authenticated(session_id: str) -> bool:
+    """Check if a session is authenticated."""
+    store = _load_store()
+    session = store.get(session_id, {})
+    auth_data = session.get("is_authenticated", {})
+    return auth_data.get("value", False)
+
+def get_session_user_id(session_id: str) -> str:
+    """Get the user_id associated with a session."""
+    store = _load_store()
+    session = store.get(session_id, {})
+    user_id_data = session.get("user_id", {})
+    return user_id_data.get("value", None)
+
+def get_user_preferred_language(session_id: str) -> str:
+    """Get the user's preferred language for a session."""
+    store = _load_store()
+    session = store.get(session_id, {})
+    lang_data = session.get("preferred_language", {})
+    return lang_data.get("value", "en")
+
+def logout_session(session_id: str):
+    """Clear authentication from a session."""
+    with lock:
+        store = _load_store()
+        if session_id in store:
+            store[session_id]["is_authenticated"] = {
+                "value": False,
+                "updated_at": datetime.utcnow().isoformat(),
+            }
+            _save_store(store)
+            logger.info(f"Session logged out: {session_id}")

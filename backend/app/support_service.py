@@ -74,8 +74,10 @@ CRISIS_KEYWORDS = {
 def detect_language_safe(text: str) -> str:
     try:
         lang = detect(text)
+        logger.info(f"Detected language: {lang} for text: {text[:30]}...")
         return lang if lang in ("hi", "mr") else "en"
     except Exception:
+        logger.info(f"Language detection failed for text: {text[:30]}..., defaulting to English")
         return "en"
 
 
@@ -235,7 +237,8 @@ def generate_support_response(req: SupportRequest):
     if emotion not in SUPPORTED_EMOTIONS:
         emotion = "neutral"
 
-    language = detect_language_safe(user_text)
+    # language = detect_language_safe(user_text)
+    language = session.get("last_preprocess", {}).get("value", {}).get("language", "en")
 
     emotion_files = EMOTION_TO_FILE.get(emotion)
     filename = None

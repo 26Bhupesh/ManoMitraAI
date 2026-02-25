@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
-import { Brain, Languages } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Brain, Languages, LogOut } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,6 +9,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { getAuthState, logout as logoutSession, getSessionId } from "@/lib/session";
+import { logout as apiLogout } from "@/lib/api";
+import { useToast } from "@/hooks/use-toast";
 
 const LANGUAGES = [
   { code: "en" as const, label: "English" },
@@ -17,10 +21,29 @@ const LANGUAGES = [
 
 const Header = () => {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
+  const { toast } = useToast();
+  const authState = getAuthState();
 
   const handleLanguageChange = (lng: "en" | "hi" | "mr") => {
+    // Only change UI language for this session, do not persist
     i18n.changeLanguage(lng);
-    localStorage.setItem("ui_language", lng);
+  };
+
+  const handleLogout = async () => {
+    try {
+      const sessionId = getSessionId();
+      await apiLogout(sessionId);
+    } catch (error) {
+      console.error("Logout error:", error);
+    } finally {
+      logoutSession();
+      toast({
+        title: t("success"),
+        description: t("logout_successful"),
+      });
+      navigate("/login");
+    }
   };
 
   return (
@@ -37,29 +60,49 @@ const Header = () => {
             <p className="text-xs text-muted-foreground">{t("subtitle")}</p>
           </div>
         </div>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="shrink-0"
-              aria-label={t("language")}
-            >
-              <Languages className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            {LANGUAGES.map(({ code, label }) => (
-              <DropdownMenuItem
-                key={code}
-                onClick={() => handleLanguageChange(code)}
-                className={cn(i18n.language === code && "bg-accent")}
+
+        <div className="flex items-center gap-2">
+          {authState && (
+            <div className="text-right mr-2 hidden sm:block">
+              <p className="text-sm font-medium text-foreground">{authState.username}</p>
+              <p className="text-xs text-muted-foreground">{t("logged_in")}</p>
+            </div>
+          )}
+
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="shrink-0"
+                aria-label={t("language")}
               >
-                {label}
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
+                <Languages className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              {LANGUAGES.map(({ code, label }) => (
+                <DropdownMenuItem
+                  key={code}
+                  onClick={() => handleLanguageChange(code)}
+                  className={cn(i18n.language === code && "bg-accent")}
+                >
+                  {label}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={handleLogout}
+            className="shrink-0"
+            aria-label={t("logout")}
+          >
+            <LogOut className="h-4 w-4" />
+          </Button>
+        </div>
       </div>
     </header>
   );
