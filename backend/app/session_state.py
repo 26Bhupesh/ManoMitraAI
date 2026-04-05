@@ -108,6 +108,32 @@ def get_user_preferred_language(session_id: str) -> str:
     lang_data = session.get("preferred_language", {})
     return lang_data.get("value", "en")
 
+
+def get_chat_history(session_id: str) -> list:
+    """Retrieve chat history list for a session (may be empty)."""
+    store = _load_store()
+    session = store.get(session_id, {})
+    hist = session.get("chat_history", {}).get("value", [])
+    return hist if isinstance(hist, list) else []
+
+
+def get_last_technique(session_id: str) -> str:
+    """Get the header of the last technique used in this session."""
+    store = _load_store()
+    session = store.get(session_id, {})
+    last = session.get("last_technique", {}).get("value", "")
+    return last if isinstance(last, str) else ""
+
+
+def get_consecutive_short_replies(session_id: str) -> int:
+    """Get the counter of consecutive short replies."""
+    store = _load_store()
+    session = store.get(session_id, {})
+    cnt = session.get("consecutive_short_replies", {}).get("value", 0)
+    return cnt if isinstance(cnt, int) else 0
+
+
+
 def logout_session(session_id: str):
     """Clear authentication from a session."""
     with lock:
