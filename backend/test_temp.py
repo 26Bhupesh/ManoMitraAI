@@ -22,7 +22,9 @@ import app.support_service as ss
 ss.client = DummyClient()
 
 print('topic result', ss.detect_topic_llm('I am worried', 'en'))
-blocks = ss.load_topic_blocks('anxiety_en.txt')
-print('blocks count', len(blocks))
-if blocks:
-    print(blocks[0])
+# RAG retrieval requires ChromaDB ingested via ingest_data.py
+try:
+    block, dist = ss.retrieve_knowledge_block('I feel anxious', 'anxiety', 'en', '')
+    print('retrieve block', block is not None, 'distance', dist)
+except Exception as e:
+    print('retrieve skipped:', e)

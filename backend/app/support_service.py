@@ -3,8 +3,11 @@ import json
 import os
 import re
 from datetime import datetime, timezone
+from functools import lru_cache
 from pathlib import Path
 import fastapi
+import chromadb # pyright: ignore[reportMissingImports]
+from chromadb.utils import embedding_functions # pyright: ignore[reportMissingImports]
 from pydantic import BaseModel
 from app.session_state import get_session, update_session
 from groq import Groq
@@ -37,7 +40,9 @@ class SupportResponse(BaseModel):
 
 # ============ CONFIGURATION ============
 
-BASE_PATH = Path(__file__).parent / "knowledge"
+CHROMA_PATH = Path(__file__).parent / "chroma_support"
+RAG_COLLECTION_NAME = "support_knowledge"
+RAG_EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 
 ALLOWED_TOPICS = {
     "anxiety",
@@ -51,58 +56,115 @@ ALLOWED_TOPICS = {
 }
 
 CRISIS_KEYWORDS = {
-    "kill myself",
-    "suicide",
-    "end my life",
-    "ending my life",
-    "no reason to live",
-    "hurt myself",
-    "self harm",
-    "die"
+    "kill myself", "suicide", "end my life", "end it", "want to die", 
+    "hurt myself", "self harm", "no reason to live", "ending it all", 
+    "मरने", "आत्महत्या", "संपवून"
 }
 
+RELEVANCE_THRESHOLD = 50.0  # Distance threshold for considering a retrieved block relevant (tuned empirically)
 
-# ============ KNOWLEDGE FILE OPERATIONS ============
 
-def load_topic_blocks(filename: str) -> list[dict]:
+# ============ VECTOR RAG (ChromaDB) ============
+
+@lru_cache(maxsize=1)
+def _get_support_collection():
+    """Persistent Chroma collection with multilingual sentence embeddings."""
+    ef = embedding_functions.SentenceTransformerEmbeddingFunction(
+        model_name=RAG_EMBEDDING_MODEL
+    )
+    client = chromadb.PersistentClient(path=str(CHROMA_PATH))
+    return client.get_collection(name=RAG_COLLECTION_NAME, embedding_function=ef)
+
+
+def retrieve_knowledge_block(
+    user_text: str,
+    topic: str,
+    language: str,
+    last_technique: str,
+) -> tuple[dict | None, float | None]:
     """
-    Load and parse topic knowledge file.
-    Splits by '---' separator.
-    Returns list of {header, body} dicts.
+    Query ChromaDB with topic + language metadata filters.
+    Returns ({header, content} or None, distance or None for logging).
+    Skips blocks whose header matches last_technique when alternatives exist.
     """
-    path = BASE_PATH / filename
-    if not path.exists():
-        logger.warning(f"Knowledge file missing: {filename}")
-        return []
+    try:
+        collection = _get_support_collection()
+    except Exception as e:
+        logger.error("ChromaDB collection unavailable (run ingest_data.py): %s", e)
+        return None, None
+
+    if collection.count() == 0:
+        logger.warning("ChromaDB collection %r is empty", RAG_COLLECTION_NAME)
+        return None, None
+
+    def query_lang(lang: str):
+        return collection.query(
+            query_texts=[user_text],
+            n_results=5,
+            where={"$and": [{"topic": topic}, {"language": lang}]},
+        )
+
+    def pick_block(result: dict) -> tuple[dict | None, float | None]:
+        metas = (result.get("metadatas") or [[]])[0]
+        dists = (result.get("distances") or [[]])[0]
+        for meta, dist in zip(metas, dists):
+            if not meta:
+                continue
+            header = meta.get("header", "")
+            if header == last_technique:
+                continue
+            if dist is not None and float(dist) > RELEVANCE_THRESHOLD:
+                logger.info(f"RAG block rejected (distance {dist:.2f} > threshold): {header}")
+                return None, float(dist)
+            return (
+                {"header": header, "content": meta.get("content", "")},
+                float(dist) if dist is not None else None,
+            )
+        return None, None
 
     try:
-        content = path.read_text(encoding="utf-8")
+        res = query_lang(language)
+        if not res.get("metadatas") or not res["metadatas"][0]:
+            res = collection.query(query_texts=[user_text], n_results=3, where={"language": language})
+        
+        if (not res.get("metadatas") or not res["metadatas"][0]) and language != "en":
+            res = collection.query(query_texts=[user_text], n_results=3, where={"language": "en"})
+
+        return pick_block(res)
     except Exception as e:
-        logger.error(f"Failed to read knowledge file {filename}: {e}")
-        return []
-    
-    blocks = []
-    for block_text in content.split("---"):
-        block_text = block_text.strip()
-        if not block_text:
-            continue
-        
-        lines = block_text.splitlines()
-        if len(lines) < 2:
-            continue
-        
-        header = lines[0].strip()
-        body = "\n".join(lines[1:]).strip()
-        
-        blocks.append({
-            "header": header,
-            "body": body
-        })
-    
-    return blocks
+        logger.error("ChromaDB query failed: %s", e)
+        return None, None
 
 
 # ============ LLM FUNCTIONS ============
+
+def detect_crisis_llm(user_text: str) -> bool:
+    """
+    Uses LLM to detect if the user is in immediate danger (self-harm or suicide).
+    Returns True if a crisis is detected.
+    """
+    prompt = """Analyze the user message for any intent of self-harm, suicide, or deep hopelessness.
+Return strictly JSON:
+{
+  "is_crisis": <boolean>,
+  "confidence": <float>
+}"""
+
+    try:
+        response = client.chat.completions.create(
+            model="llama-3.1-8b-instant",
+            messages=[{"role": "user", "content": f"{prompt}\n\nUser message: {user_text}"}],
+            temperature=0.0,
+            max_tokens=40
+        )
+        result = json.loads(response.choices[0].message.content.strip())
+        # Trigger crisis if boolean is true and confidence is reasonably high
+        return result.get("is_crisis", False) and result.get("confidence", 0) > 0.7
+    except Exception as e:
+        logger.error(f"LLM Crisis check failed: {e}")
+        # Fallback to keyword check if LLM fails
+        return contains_crisis_keywords(user_text)
+
 
 def detect_topic_llm(user_text: str, language: str = "en") -> dict:
     """
@@ -160,109 +222,74 @@ Do not explain."""
         return {"topic": "general_support", "confidence": 0.6}
 
 
-def score_block_relevance(block_body: str, user_text: str) -> float:
-    """
-    Score block relevance to user text using LLM.
-    Returns score 0-5.
-    """
-    escaped_user = user_text.replace('"', '\\"')
-    escaped_block = block_body[:500].replace('"', '\\"')
-    
-    prompt = f"""Rate relevance from 0 to 5.
-User: "{escaped_user}"
-Guidance: "{escaped_block}"
-Return only a number."""
-    
-    try:
-        response = client.chat.completions.create(
-            model="llama-3.1-8b-instant",
-            messages=[{
-                "role": "user",
-                "content": prompt
-            }],
-            temperature=0.0,
-            max_tokens=5
-        )
-        
-        score_text = response.choices[0].message.content.strip()
-        score = float(score_text)
-        return max(0, min(5, score))  # Clamp to 0-5
-    
-    except Exception as e:
-        logger.error(f"Block scoring failed: {e}")
-        return 0
-
-
 def generate_response(user_text: str, fusion_emotion: str, language: str, 
-                     chat_history: list = None, knowledge_block: dict = None,
-                     max_sentences: int = 4) -> str:
-    """
-    Generate contextual response using LLM.
-    Uses chat history, emotion, and optional knowledge block.
-    Max 4 sentences.
-    """
+                      chat_history: list = None, knowledge_block: dict = None, max_sentences: int = 4,
+                      disengage_prompt_override: str = None) -> str:
     if chat_history is None:
         chat_history = []
     
-    # Format chat history for prompt
-    history_str = ""
-    for msg in chat_history[-6:]:  # Last 6 exchanges
-        role = msg.get("role", "").title()
-        content = msg.get("content", "")
-        if role and content:
-            history_str += f"{role}: {content}\n"
-    
+    # Mapping for LLM clarity
+    lang_map = {"en": "English", "hi": "Hindi", "mr": "Marathi"}
+    target_lang = lang_map.get(language, "English")
+
+    # Standardize guidance extraction
     knowledge_str = ""
     if knowledge_block:
-        knowledge_str = f"Header: {knowledge_block.get('header', '')}\nGuidance: {knowledge_block.get('body', '')}"
+        header = knowledge_block.get('header', '')
+        body = knowledge_block.get('content') or knowledge_block.get('body') or ""
+        knowledge_str = f"Technique: {header}\nSteps: {body}"
     
-    # Build system prompt
-    system_prompt = f"""You are an empathetic mental health support assistant.
+    # SYSTEM PROMPT: Dynamic and Persona-focused
+    # The language rule is now dynamic to prevent the 'English-exclusion' bug.
+    system_prompt = f"""You are 'ManoMitra', a compassionate and grounded mental health assistant. 
+Your goal is to provide a safe space and practical coping tools.
 
-Rules:
-- If greeting or casual, respond briefly.
-- If distressed, validate briefly first.
-- Use guidance only if relevant.
-- Suggest at most ONE technique.
-- Do NOT repeat previous techniques.
-- Keep response under 4 sentences.
-- Avoid excessive generic empathy.
-- No diagnoses.
-- No medication suggestions.
-- Respond strictly in {language}."""
-    
-    user_prompt = f"""Conversation history:
-{history_str or "(New conversation)"}
+CORE INSTRUCTIONS:
+1. LANGUAGE: Respond strictly and exclusively in {target_lang}. 
+2. STRUCTURE: 
+   - Start with a brief, warm validation of the user's '{fusion_emotion}' emotion.
+   - If 'Guidance' is provided below, explain it simply.
+   - End with a supportive closing or a gentle question to keep the conversation open.
+3. CONSTRAINTS: 
+   - Length: Not more than {max_sentences} sentences. 
+   - Tone: Empathetic, non-clinical, and calm.
+   - Safety: No medical diagnoses or prescriptions.
+4. STYLE: Use natural, spoken {target_lang}. Avoid overly formal or robotic "textbook" phrasing."""
 
-User emotion: {fusion_emotion}
+    user_prompt = f"""[Context]
+User Emotion: {fusion_emotion}
+Target Language: {target_lang}
 
-Selected guidance:
-{knowledge_str or "(No specific technique)"}
+[Recent History]
+{chat_history[-3:]}
 
-Generate supportive response:"""
-    
+[Guidance to Incorporate]
+{knowledge_str or disengage_prompt_override or "No specific technique today. Focus on active listening and emotional support."}
+
+[Action]
+Write around {max_sentences} sentence supportive response in {target_lang}:"""
+
     try:
         response = client.chat.completions.create(
-            model="llama-3.1-8b-instant",
+            model="llama-3.3-70b-versatile",# if language == "mr" or language == "hi" else "llama-3.1-8b-instant",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt}
             ],
-            temperature=0.4,
-            max_tokens=90
+            temperature=0.5, # Balanced for creativity and consistency
+            max_tokens=450,   # Safe buffer for Devanagari scripts
+            top_p=0.85
         )
-        
         return response.choices[0].message.content.strip()
     
     except Exception as e:
         logger.error(f"Response generation failed: {e}")
-        # Fallback response in user's language
-        fallback_phrases = {
-            "en": "I'm here with you. What's on your mind?",
-            "hi": "मैं आपके साथ हूं। आप क्या सोच रहे हैं?",
-            "mr": "मी तुमच्या सोबत आहे. तुमचे काय विचार आहे?"
+        fallback = {
+            "en": "I'm here with you. Please, tell me more about how you're feeling.",
+            "hi": "मैं आपके साथ हूँ। कृपया मुझे और बताइये कि आप कैसा महसूस कर रहे हैं।",
+            "mr": "मी तुमच्या सोबत आहे. तुम्हाला नक्की कसं वाटतंय त्याबद्दल अधिक सांगा."
         }
-        return fallback_phrases.get(language, fallback_phrases["en"])
+        return fallback.get(language, fallback["en"])
 
 
 # ============ UTILITY FUNCTIONS ============
@@ -281,12 +308,12 @@ def detect_intent(text: str) -> str:
     text_lower = text.lower().strip()
     
     # Greeting patterns
-    greeting_patterns = r'\b(hi|hello|hey|namaste|howdy|thanks|thank you)\b'
+    greeting_patterns = r'\b(hi|hello|hey|namaste|thanks|thank you)\b'
     if re.search(greeting_patterns, text_lower):
         return "greeting"
     
     # Introduction patterns
-    intro_patterns = r"(i'm|i am|my name is|call me)"
+    intro_patterns = r"(?i)^\s*(?:i'm|i am|my name is|call me)\b\s+([A-Za-z]+(?:\s+[A-Za-z]+)*)([.!]*)$"
     if re.search(intro_patterns, text_lower):
         return "introduction"
     
@@ -299,8 +326,8 @@ def detect_intent(text: str) -> str:
 
 
 def should_enforce_short_response(user_text: str) -> bool:
-    """Check if user message is short (≤3 words)."""
-    return len(user_text.split()) <= 3
+    """Check if user message is short (≤4 words)."""
+    return len(user_text.split()) <= 4
 
 
 def get_language_from_session(session: dict) -> str:
@@ -480,50 +507,21 @@ def generate_support_response(req: SupportRequest):
     topic_result = detect_topic_llm(user_text, language)
     topic = topic_result["topic"]
 
-    # ============ STEP 7: LOAD TOPIC KNOWLEDGE FILE ============
-    filename = f"{topic}_{language}.txt"
-    blocks = load_topic_blocks(filename)
-    
-    if not blocks:
-        # Fallback to English if language variant not found
-        filename = f"{topic}_en.txt"
-        blocks = load_topic_blocks(filename)
-
-    # ============ STEP 8: SCORE BLOCKS & SELECT ============
-    selected_block = None
+    # ============ STEP 7–8: VECTOR RETRIEVAL (ChromaDB) ============
     last_technique = get_last_technique(session)
-    block_scored = None
-    
-    if blocks:
-        scored_blocks = []
-        for block in blocks:
-            score = score_block_relevance(block["body"], user_text)
-            scored_blocks.append((score, block))
-        
-        # Sort by score descending
-        scored_blocks.sort(key=lambda x: x[0], reverse=True)
-        
-        # Pick highest scoring block if >= 3
-        if scored_blocks[0][0] >= 3:
-            candidate = scored_blocks[0][1]
-            block_scored = scored_blocks[0][0]
-            
-            # Check if equals last technique
-            if candidate["header"] == last_technique:
-                # Pick next highest
-                if len(scored_blocks) > 1 and scored_blocks[1][0] >= 3:
-                    selected_block = scored_blocks[1][1]
-                    block_scored = scored_blocks[1][0]
-            else:
-                selected_block = candidate
+    selected_block, rag_distance = retrieve_knowledge_block(
+        user_text=user_text,
+        topic=topic,
+        language=language,
+        last_technique=last_technique,
+    )
 
-
-    # Testing data extraction: topic, block_header, block_score, intent, emotion, language
+    # Testing data extraction: topic, block_header, RAG distance, intent, emotion, language
     logger.info(
         f"Data extraction for {session_id}: "
         f"topic={topic}, block_header={selected_block['header'] if selected_block else 'None'}, "
-        f"block_used={selected_block['body'] if selected_block else 'None'},"
-        f"block_score={block_scored}, intent={intent}, "
+        f"block_used={selected_block['content'] if selected_block else 'None'},"
+        f"rag_distance={rag_distance}, intent={intent}, "
         f"emotion={fusion_emotion}, language={language}"
     )
 
@@ -538,8 +536,15 @@ def generate_support_response(req: SupportRequest):
         short_count = 0
     
     # If 3 consecutive short replies, ask open-ended question instead
+    disengage_prompt_override = ""
     if short_count >= 3:
         selected_block = None  # Skip technique
+        disengage_prompt_override = (
+            "The user has given very short responses several times. "
+            "Ask ONE simple, concrete, specific question to gently re-engage them "
+            "(e.g. about something they mentioned, or what they're doing today). "
+            "Do NOT ask about how they feel about the conversation itself."
+        )
         # Will trigger open-ended prompt in generate_response
 
     # ============ STEP 10: RESPONSE LENGTH ENFORCEMENT ============
@@ -548,6 +553,15 @@ def generate_support_response(req: SupportRequest):
     # ============ STEP 11: GENERATE RESPONSE ============
     chat_history = extract_chat_history(session)
     
+    TOPIC_EMOTION_GUARD = {
+        "sleep": ["tired", "restless", "frustrated", "anxious", "neutral"],
+        "stress": ["anxious", "overwhelmed", "frustrated", "neutral"],
+        "anxiety": ["fear", "anxious", "nervous", "neutral"],
+    }
+    # If emotion seems mismatched, soften the label
+    if topic in TOPIC_EMOTION_GUARD and fusion_emotion not in TOPIC_EMOTION_GUARD[topic]:
+        fusion_emotion = "overwhelmed"  # safe fallback
+
     try:
         bot_reply = generate_response(
             user_text=user_text,
@@ -555,7 +569,8 @@ def generate_support_response(req: SupportRequest):
             language=language,
             chat_history=chat_history,
             knowledge_block=selected_block,
-            max_sentences=max_sentences
+            max_sentences=max_sentences,
+            disengage_prompt_override=disengage_prompt_override
         )
     except Exception as e:
         logger.error(f"Response generation failed entirely: {e}")
@@ -563,7 +578,7 @@ def generate_support_response(req: SupportRequest):
         fallback_phrases = {
             "en": "I'm here with you. What do you need right now?",
             "hi": "मैं आपके साथ हूं। आपको अभी क्या चाहिए?",
-            "mr": "मी तुमच्या सोबत आहे. तुम्हाला अभी काय चाहिए?"
+            "mr": "मी तुमच्या सोबत आहे. तुम्हाला आत्ता काय हवं आहे?"
         }
         bot_reply = fallback_phrases.get(language, fallback_phrases["en"])
 

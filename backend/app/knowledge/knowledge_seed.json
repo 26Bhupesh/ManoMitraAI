@@ -1,0 +1,842 @@
+[
+  {
+    "id": "anx_en_01",
+    "topic": "anxiety",
+    "language": "en",
+    "header": "5-4-3-2-1 Grounding Technique",
+    "content": "Focus on your surroundings: Identify 5 things you see, 4 things you can touch, 3 things you hear, 2 things you can smell, and 1 thing you can taste. This helps pull your mind away from anxious thoughts and back to the present moment."
+  },
+  {
+    "id": "anx_hi_01",
+    "topic": "anxiety",
+    "language": "hi",
+    "header": "5-4-3-2-1 ग्राउंडिंग तकनीक",
+    "content": "अपने परिवेश पर ध्यान दें: 5 चीजें जिन्हें आप देख सकते हैं, 4 चीजें जिन्हें आप छू सकते हैं, 3 चीजें जिन्हें आप सुन सकते हैं, 2 चीजें जिन्हें आप सूंघ सकते हैं, और 1 चीज जिसका आप स्वाद ले सकते हैं। यह आपके दिमाग को बेचैनी भरे विचारों से हटाकर वर्तमान क्षण में लाने में मदद करता है।"
+  },
+  {
+    "id": "anx_mr_01",
+    "topic": "anxiety",
+    "language": "mr",
+    "header": "५-४-३-२-१ ग्राउंडिंग पद्धत",
+    "content": "तुमच्या सभोवतालच्या गोष्टींवर लक्ष केंद्रित करा: तुम्हाला दिसणाऱ्या ५ गोष्टी, तुम्ही स्पर्श करू शकता अशा ४ गोष्टी, तुम्ही ऐकू शकता असे ३ आवाज, तुम्ही वास घेऊ शकता अशा २ गोष्टी आणि तुम्ही चाखू शकता अशी १ गोष्ट ओळखा. हे तुमचे मन अस्वस्थ विचारांपासून दूर वर्तमान क्षणात आणण्यास मदत करते."
+  },
+  {
+    "id": "anx_en_02",
+    "topic": "anxiety",
+    "language": "en",
+    "header": "Worry Time Scheduling",
+    "content": "Set aside 15 minutes each day as your dedicated 'worry time.' When anxious thoughts appear outside that window, remind yourself you'll address them later. This stops anxiety from hijacking your whole day and gives worries a proper, contained space."
+  },
+  {
+    "id": "anx_hi_02",
+    "topic": "anxiety",
+    "language": "hi",
+    "header": "चिंता के लिए समय तय करें",
+    "content": "हर दिन 15 मिनट 'चिंता का समय' तय करें। जब दिन में बेकाबू विचार आएं, तो खुद से कहें — इन्हें उसी वक्त सोचूंगा। यह तरीका चिंता को पूरे दिन पर हावी होने से रोकता है और मन को बाकी काम पर लगाने में मदद करता है।"
+  },
+  {
+    "id": "anx_mr_02",
+    "topic": "anxiety",
+    "language": "mr",
+    "header": "काळजीसाठी ठराविक वेळ",
+    "content": "दररोज १५ मिनिटे 'काळजीची वेळ' ठरवा. त्या वेळेबाहेर जेव्हा काळजीचे विचार येतात, तेव्हा स्वतःला सांगा — हे नंतर विचार करेन. या पद्धतीमुळे काळजी दिवसभर मनावर राज्य करत नाही आणि मन शांत राहते."
+  },
+  {
+    "id": "anx_en_03",
+    "topic": "anxiety",
+    "language": "en",
+    "header": "Diaphragmatic Breathing",
+    "content": "Place one hand on your chest, one on your belly. Breathe in slowly so only your belly rises. Exhale fully. This activates the vagus nerve, telling your body it's safe. Even three slow breaths can noticeably reduce that tight, anxious feeling."
+  },
+  {
+    "id": "anx_hi_03",
+    "topic": "anxiety",
+    "language": "hi",
+    "header": "पेट से सांस लेना",
+    "content": "एक हाथ छाती पर और एक पेट पर रखें। धीरे-धीरे सांस लें, ताकि सिर्फ पेट ऊपर उठे। यह तरीका शरीर को 'सब ठीक है' का संकेत देता है। बस तीन गहरी सांसें भी घबराहट को काफी कम कर सकती हैं।"
+  },
+  {
+    "id": "anx_mr_03",
+    "topic": "anxiety",
+    "language": "mr",
+    "header": "पोटातून श्वास घेणे",
+    "content": "एक हात छातीवर आणि एक पोटावर ठेवा. हळूहळू श्वास घ्या जेणेकरून फक्त पोट वर येईल. हे शरीराला 'सगळं ठीक आहे' असा संदेश देते. फक्त तीन दीर्घ श्वासही मनातील घालमेल बऱ्याच प्रमाणात कमी करतात."
+  },
+  {
+    "id": "anx_en_04",
+    "topic": "anxiety",
+    "language": "en",
+    "header": "Thought Defusion",
+    "content": "When an anxious thought appears, try saying 'I notice I'm having the thought that…' instead of treating it as fact. This small shift creates distance between you and the worry. Thoughts are mental events, not reality — you don't have to obey them."
+  },
+  {
+    "id": "anx_hi_04",
+    "topic": "anxiety",
+    "language": "hi",
+    "header": "विचारों से थोड़ी दूरी बनाएं",
+    "content": "जब कोई डरावना विचार आए, तो खुद से कहें — 'मैं देख रहा हूं कि मेरे मन में यह विचार आ रहा है।' यह छोटी-सी बदलाव विचार और आपके बीच दूरी बनाता है। विचार सच नहीं होते — उन्हें बस गुजर जाने दें।"
+  },
+  {
+    "id": "anx_mr_04",
+    "topic": "anxiety",
+    "language": "mr",
+    "header": "विचारांपासून थोडे वेगळे व्हा",
+    "content": "जेव्हा एखादा भीतीचा विचार येतो, तेव्हा स्वतःला सांगा — 'मला जाणवतंय की माझ्या मनात हा विचार येतोय.' हा छोटासा बदल विचार आणि तुमच्यामध्ये अंतर निर्माण करतो. विचार म्हणजे सत्य नाही — त्यांना जाऊ द्या."
+  },
+  {
+    "id": "anx_en_05",
+    "topic": "anxiety",
+    "language": "en",
+    "header": "Cold Water Trick",
+    "content": "When anxiety peaks, splash cold water on your face or hold an ice cube briefly. This triggers the dive reflex, quickly lowering your heart rate. It's a fast, physical way to interrupt the anxiety spiral before it gets overwhelming."
+  },
+  {
+    "id": "anx_hi_05",
+    "topic": "anxiety",
+    "language": "hi",
+    "header": "ठंडे पानी का असर",
+    "content": "जब घबराहट बहुत बढ़ जाए, तो चेहरे पर ठंडा पानी छींटें या बर्फ का टुकड़ा थामें। यह शरीर में एक प्राकृतिक प्रतिक्रिया जगाता है जिससे दिल की धड़कन जल्दी शांत होती है। यह घबराहट को रोकने का सबसे आसान और तेज़ तरीका है।"
+  },
+  {
+    "id": "anx_mr_05",
+    "topic": "anxiety",
+    "language": "mr",
+    "header": "थंड पाण्याची मदत",
+    "content": "जेव्हा घाबरगुंडी खूप वाढते, तेव्हा चेहऱ्यावर थंड पाणी शिंपडा किंवा बर्फाचा तुकडा धरा. यामुळे शरीरात एक नैसर्गिक प्रतिक्रिया होते आणि हृदयाचे ठोके लवकर शांत होतात. हे चिंतेचे चक्र थांबवण्याचा झटपट उपाय आहे."
+  },
+  {
+    "id": "lmd_en_01",
+    "topic": "low_mood",
+    "language": "en",
+    "header": "Behavioral Activation",
+    "content": "Low mood drains motivation, but waiting to 'feel like it' rarely works. Pick one small, pleasant activity — a 10-minute walk, your favorite song — and do it anyway. Action creates mood; mood rarely creates action. Start tiny and build from there."
+  },
+  {
+    "id": "lmd_hi_01",
+    "topic": "low_mood",
+    "language": "hi",
+    "header": "छोटी शुरुआत, बड़ा फर्क",
+    "content": "उदास मन में कुछ करने का मन नहीं होता, लेकिन 'मन होगा तब करूंगा' सोचना काम नहीं करता। एक छोटा सा काम चुनें — 10 मिनट की सैर या पसंदीदा गाना। पहले कदम उठाइए, अच्छा महसूस होना बाद में आता है।"
+  },
+  {
+    "id": "lmd_mr_01",
+    "topic": "low_mood",
+    "language": "mr",
+    "header": "छोटी सुरुवात, मोठा फरक",
+    "content": "मन उदास असताना काहीही करावेसे वाटत नाही, पण 'इच्छा झाली की करेन' असे म्हणणे काम करत नाही. एखादी छोटी आवडती गोष्ट करा — १० मिनिटे फिरायला जा किंवा आवडते गाणे ऐका. आधी कृती करा, मग बरे वाटते."
+  },
+  {
+    "id": "lmd_en_02",
+    "topic": "low_mood",
+    "language": "en",
+    "header": "Gratitude Journaling",
+    "content": "Each night, write down three specific things that went okay — not grand events, just real ones. 'My chai was perfect' counts. Research shows this gradually rewires the brain toward noticing positives. Keep it honest, not forced."
+  },
+  {
+    "id": "lmd_hi_02",
+    "topic": "low_mood",
+    "language": "hi",
+    "header": "शुक्रगुज़ार नोट्स लिखें",
+    "content": "रात को सोने से पहले तीन चीज़ें लिखें जो आज ठीक रहीं — बड़ी नहीं, बस सच्ची। 'चाय अच्छी बनी' भी चलेगा। यह आदत धीरे-धीरे दिमाग को अच्छी चीज़ें नोटिस करने की तरफ मोड़ती है। जबरदस्ती नहीं, बस ईमानदारी से।"
+  },
+  {
+    "id": "lmd_mr_02",
+    "topic": "low_mood",
+    "language": "mr",
+    "header": "कृतज्ञतेची डायरी",
+    "content": "रात्री झोपण्यापूर्वी तीन गोष्टी लिहा ज्या आज बऱ्या गेल्या — मोठ्या नको, फक्त खऱ्या. 'चहा छान झाला' हे पण चालेल. ही सवय हळूहळू मेंदूला चांगल्या गोष्टी बघायला शिकवते. जबरदस्तीने नाही, मनापासून लिहा."
+  },
+  {
+    "id": "lmd_en_03",
+    "topic": "low_mood",
+    "language": "en",
+    "header": "Sunlight and Movement",
+    "content": "Even 10 minutes of morning sunlight and a short walk can measurably improve mood. Sunlight regulates serotonin and your body clock. You don't need a gym or a plan — just step outside. Your brain treats movement as a signal that life is okay."
+  },
+  {
+    "id": "lmd_hi_03",
+    "topic": "low_mood",
+    "language": "hi",
+    "header": "धूप और थोड़ी चहलकदमी",
+    "content": "सुबह की 10 मिनट की धूप और छोटी सैर मूड को काफी बेहतर कर सकती है। धूप सेरोटोनिन बनाने में मदद करती है। जिम या बड़ी योजना की ज़रूरत नहीं — बस बाहर निकलें। थोड़ी हलचल दिमाग को बताती है कि सब ठीक है।"
+  },
+  {
+    "id": "lmd_mr_03",
+    "topic": "low_mood",
+    "language": "mr",
+    "header": "ऊन आणि चालणे",
+    "content": "सकाळी १० मिनिटे ऊन आणि थोडी चालणे मूड खूप सुधारू शकते. ऊन सेरोटोनिन तयार करण्यास मदत करते. जिम किंवा मोठी योजना नको — फक्त बाहेर पडा. थोडी हालचाल मेंदूला सांगते की सगळं ठीक आहे."
+  },
+  {
+    "id": "lmd_en_04",
+    "topic": "low_mood",
+    "language": "en",
+    "header": "Self-Compassion Pause",
+    "content": "When you're being hard on yourself, ask: 'What would I say to a close friend feeling this way?' Then say that to yourself. Research by Dr. Kristin Neff shows self-compassion reduces depression more effectively than self-criticism ever could."
+  },
+  {
+    "id": "lmd_hi_04",
+    "topic": "low_mood",
+    "language": "hi",
+    "header": "खुद से भी दोस्त की तरह बात करें",
+    "content": "जब मन खुद को बहुत कोसने लगे, तो रुककर सोचें — 'अगर मेरा कोई खास दोस्त ऐसा महसूस करता, तो मैं उससे क्या कहता?' वही अपने आप से कहें। खुद के प्रति दयालु होना, उदासी से उबरने का सबसे असरदार तरीका है।"
+  },
+  {
+    "id": "lmd_mr_04",
+    "topic": "low_mood",
+    "language": "mr",
+    "header": "स्वतःशीही मित्रासारखे बोला",
+    "content": "जेव्हा मन स्वतःलाच खूप दोष देऊ लागते, तेव्हा थांबा आणि विचारा — 'एखाद्या जवळच्या मित्राला असे वाटत असते तर मी त्याला काय सांगितले असते?' तेच स्वतःला सांगा. स्वतःवर दया करणे उदासपणातून बाहेर पडण्याचा सर्वोत्तम मार्ग आहे."
+  },
+  {
+    "id": "lmd_en_05",
+    "topic": "low_mood",
+    "language": "en",
+    "header": "Opposite Action",
+    "content": "Low mood pushes you toward isolation and inactivity. Try the opposite: reach out to one person, tidy one small corner, or cook one meal. You're not faking it — you're giving your brain new data that contradicts the story that everything is hopeless."
+  },
+  {
+    "id": "lmd_hi_05",
+    "topic": "low_mood",
+    "language": "hi",
+    "header": "उल्टा करके देखें",
+    "content": "उदासी आपको अकेला रहने और कुछ न करने पर मजबूर करती है। उसके उलट चलें — किसी एक से बात करें, एक कोना साफ करें, या एक बार खाना बनाएं। यह दिखावा नहीं है, बल्कि दिमाग को नया अनुभव देना है कि सब बेकार नहीं है।"
+  },
+  {
+    "id": "lmd_mr_05",
+    "topic": "low_mood",
+    "language": "mr",
+    "header": "उलटे करून पहा",
+    "content": "उदासी एकट्याने राहायला आणि काहीही न करायला भाग पाडते. त्याच्या उलट जा — एखाद्याशी बोला, एक कोपरा आवरा, किंवा एकदा स्वतःसाठी जेवण बनवा. हे नाटक नाही — मेंदूला नवीन अनुभव देणे आहे की सगळे व्यर्थ नाही."
+  },
+  {
+    "id": "ang_en_01",
+    "topic": "anger",
+    "language": "en",
+    "header": "The 90-Second Rule",
+    "content": "A wave of anger in the body lasts about 90 seconds. When you feel triggered, commit to not responding for 90 seconds — just breathe. You're not suppressing anger; you're letting the neurochemical storm pass before you choose how to respond."
+  },
+  {
+    "id": "ang_hi_01",
+    "topic": "anger",
+    "language": "hi",
+    "header": "90-सेकंड का नियम",
+    "content": "गुस्से की लहर आमतौर पर 90 सेकंड तक रहती है। जब आप गुस्सा महसूस करें, तो प्रतिक्रिया देने से पहले 90 सेकंड तक गहरी सांस लें। यह आपके 'इमोशनल ब्रेन' को शांत होने का समय देता है।"
+  },
+  {
+    "id": "ang_mr_01",
+    "topic": "anger",
+    "language": "mr",
+    "header": "९०-सेकंदाचा नियम",
+    "content": "रागाची लाट शरीरात साधारण ९० सेकंद टिकते. जेव्हा खूप राग येतो, तेव्हा ९० सेकंद काहीही न बोलता फक्त श्वास घ्या. तुम्ही राग दाबत नाही — फक्त मनाच्या वादळाला शांत होण्याची संधी देत आहात."
+  },
+  {
+    "id": "ang_en_02",
+    "topic": "anger",
+    "language": "en",
+    "header": "Name It to Tame It",
+    "content": "When anger rises, say to yourself: 'I'm feeling really angry right now.' Simply labeling the emotion activates the thinking brain and reduces the intensity of the feeling. It's not weakness — it's one of the smartest things you can do in a heated moment."
+  },
+  {
+    "id": "ang_hi_02",
+    "topic": "anger",
+    "language": "hi",
+    "header": "गुस्से को नाम दें",
+    "content": "जब गुस्सा उठे, तो खुद से कहें — 'मैं अभी सच में बहुत गुस्से में हूं।' इमोशन को नाम देने से सोचने वाला दिमाग एक्टिव होता है और गुस्से की तीव्रता कम होती है। यह कमज़ोरी नहीं — बल्कि उस पल में सबसे समझदारी का काम है।"
+  },
+  {
+    "id": "ang_mr_02",
+    "topic": "anger",
+    "language": "mr",
+    "header": "रागाला नाव द्या",
+    "content": "राग येतो तेव्हा स्वतःला म्हणा — 'मला आत्ता खरोखरच खूप राग आलाय.' भावनेला नाव दिल्याने विचार करणारा मेंदू सक्रिय होतो आणि रागाची तीव्रता कमी होते. हे दुर्बलपणा नाही — त्या क्षणी हे सर्वात शहाणपणाचे आहे."
+  },
+  {
+    "id": "ang_en_03",
+    "topic": "anger",
+    "language": "en",
+    "header": "Physical Release",
+    "content": "Anger is energy — it needs an outlet. Go for a brisk walk, do jumping jacks, or tear up old paper. Physical movement metabolizes the stress hormones that fuel anger. Don't let it sit and stew; move it through your body instead."
+  },
+  {
+    "id": "ang_hi_03",
+    "topic": "anger",
+    "language": "hi",
+    "header": "गुस्से को शरीर से बाहर निकालें",
+    "content": "गुस्सा एक ऊर्जा है — इसे निकास चाहिए। तेज़ चलें, उछल-कूद करें, या कोई पुरानी कागज़ें फाड़ें। शारीरिक हलचल गुस्से को बढ़ावा देने वाले हार्मोन को खत्म कर देती है। इसे अंदर मत दबाएं — शरीर से बाहर बहने दें।"
+  },
+  {
+    "id": "ang_mr_03",
+    "topic": "anger",
+    "language": "mr",
+    "header": "रागाला शरीरातून बाहेर काढा",
+    "content": "राग म्हणजे एक ऊर्जा आहे — तिला वाट हवी असते. जोरात चाला, उड्या मारा, किंवा जुने कागद फाडा. शारीरिक हालचालींमुळे रागाला खतपाणी घालणारे हार्मोन जळतात. ते आत दाबू नका — शरीरातून बाहेर पडू द्या."
+  },
+  {
+    "id": "ang_en_04",
+    "topic": "anger",
+    "language": "en",
+    "header": "Finding the Feeling Beneath",
+    "content": "Anger is often a 'cover emotion' for something softer — hurt, fear, or disappointment. Ask yourself: 'What am I actually feeling under this anger?' Identifying the real emotion helps you address what truly needs attention instead of just reacting."
+  },
+  {
+    "id": "ang_hi_04",
+    "topic": "anger",
+    "language": "hi",
+    "header": "गुस्से के नीचे क्या है?",
+    "content": "गुस्सा अक्सर किसी गहरी भावना को छुपाता है — चोट, डर, या निराशा। खुद से पूछें: 'इस गुस्से के नीचे असल में मुझे क्या महसूस हो रहा है?' असली भावना को पहचानने से उस पर सही तरीके से काम होता है।"
+  },
+  {
+    "id": "ang_mr_04",
+    "topic": "anger",
+    "language": "mr",
+    "header": "रागाखाली काय आहे?",
+    "content": "राग बऱ्याचदा एखाद्या खोल भावनेला झाकतो — दुखापत, भीती किंवा निराशा. स्वतःला विचारा: 'या रागाखाली मला खरोखर काय वाटतेय?' खरी भावना ओळखली की त्यावर योग्य पद्धतीने काम करता येते."
+  },
+  {
+    "id": "ang_en_05",
+    "topic": "anger",
+    "language": "en",
+    "header": "I-Statements in Conflict",
+    "content": "Instead of 'You always do this,' try 'I feel hurt when this happens.' I-statements shift the conversation from blame to honest expression. The other person is less likely to get defensive, and you're more likely to actually be heard."
+  },
+  {
+    "id": "ang_hi_05",
+    "topic": "anger",
+    "language": "hi",
+    "header": "'मैं' से बोलना सीखें",
+    "content": "'तुम हमेशा ऐसा करते हो' की जगह कहें — 'जब ऐसा होता है, मुझे बहुत बुरा लगता है।' इस तरह बोलने से लड़ाई कम होती है और बात सुनी जाती है। सामने वाला कम defensive होता है, और आपकी बात का असर भी ज़्यादा होता है।"
+  },
+  {
+    "id": "ang_mr_05",
+    "topic": "anger",
+    "language": "mr",
+    "header": "'मी' वापरून बोला",
+    "content": "'तू नेहमी असेच करतोस' ऐवजी म्हणा — 'जेव्हा असे होते, तेव्हा मला खूप वाईट वाटते.' असे बोलल्याने भांडण कमी होते आणि बोलणे ऐकले जाते. समोरचा कमी defensive होतो आणि तुमच्या शब्दांचाही जास्त परिणाम होतो."
+  },
+  {
+    "id": "str_en_01",
+    "topic": "stress",
+    "language": "en",
+    "header": "Progressive Muscle Relaxation",
+    "content": "Start from your toes and work your way up. Tense each muscle group for 5 seconds, then release suddenly and feel the tension flow out. This physical release signals your brain to lower stress levels."
+  },
+  {
+    "id": "str_hi_01",
+    "topic": "stress",
+    "language": "hi",
+    "header": "प्रोग्रेसिव मसल रिलैक्सेशन",
+    "content": "अपने पैरों की उंगलियों से शुरू करें और ऊपर की ओर बढ़ें। प्रत्येक मांसपेशी समूह को 5 सेकंड के लिए सिकोड़ें, फिर अचानक छोड़ दें। यह शारीरिक खिंचाव कम करने से आपके मस्तिष्क को तनाव कम करने का संकेत मिलता है।"
+  },
+  {
+    "id": "str_mr_01",
+    "topic": "stress",
+    "language": "mr",
+    "header": "प्रोग्रेसिव मसल रिलॅक्सेशन",
+    "content": "तुमच्या पायाच्या बोटांपासून सुरुवात करा आणि वरच्या दिशेने जा. प्रत्येक स्नायू ५ सेकंदांसाठी घट्ट करा आणि नंतर अचानक सोडा. हे स्नायू शिथिल केल्यामुळे तुमच्या मेंदूला ताण कमी करण्याचा संदेश मिळतो."
+  },
+  {
+    "id": "str_en_02",
+    "topic": "stress",
+    "language": "en",
+    "header": "The Brain Dump",
+    "content": "When stress feels like a traffic jam in your head, grab a paper and write everything down — tasks, worries, random thoughts. Don't organize it; just empty your mind. Externalizing it frees mental bandwidth and makes problems feel more manageable."
+  },
+  {
+    "id": "str_hi_02",
+    "topic": "stress",
+    "language": "hi",
+    "header": "दिमाग का बोझ उतारें",
+    "content": "जब दिमाग में विचारों की भीड़ लग जाए, तो एक कागज़ लें और सब कुछ लिख दें — काम, चिंताएं, बेतरतीब ख्याल। व्यवस्थित करने की कोशिश मत करें, बस मन खाली करें। बाहर निकालने से दिमाग हल्का होता है और मुश्किलें छोटी लगती हैं।"
+  },
+  {
+    "id": "str_mr_02",
+    "topic": "stress",
+    "language": "mr",
+    "header": "मेंदूचे ओझे उतरवा",
+    "content": "जेव्हा डोक्यात विचारांची गर्दी होते, तेव्हा कागद घ्या आणि सगळे लिहून टाका — कामे, काळज्या, उगाच येणारे विचार. व्यवस्थित करायची घाई नको, फक्त मन रिकामे करा. बाहेर काढल्याने मेंदू हलका होतो आणि समस्या लहान वाटतात."
+  },
+  {
+    "id": "str_en_03",
+    "topic": "stress",
+    "language": "en",
+    "header": "Single-Tasking",
+    "content": "Multitasking keeps your stress system constantly switched on. Pick one task, close other tabs, and work on it completely before moving on. Research shows this is actually faster and far less exhausting than juggling everything at once."
+  },
+  {
+    "id": "str_hi_03",
+    "topic": "stress",
+    "language": "hi",
+    "header": "एक काम, पूरा ध्यान",
+    "content": "एक साथ कई काम करने से तनाव का सिस्टम हर वक्त चालू रहता है। एक काम चुनें, बाकी सब बंद करें, और उसे पूरा करने के बाद ही आगे बढ़ें। शोध बताते हैं कि यह तरीका तेज़ भी है और थकान भी कम होती है।"
+  },
+  {
+    "id": "str_mr_03",
+    "topic": "stress",
+    "language": "mr",
+    "header": "एक काम, पूर्ण लक्ष",
+    "content": "एकाच वेळी अनेक गोष्टी करण्याने ताणाची यंत्रणा सतत चालू राहते. एक काम निवडा, बाकी सगळे बंद करा, आणि ते पूर्ण झाल्यावरच पुढे जा. संशोधन सांगते की हे जलद आहे आणि थकवाही खूप कमी येतो."
+  },
+  {
+    "id": "str_en_04",
+    "topic": "stress",
+    "language": "en",
+    "header": "Reframe Stress as Energy",
+    "content": "Studies show that believing 'stress is helpful' actually improves performance. When you feel stressed before something important, try thinking: 'My body is getting ready.' This cognitive reframe activates performance-boosting hormones instead of shutdown ones."
+  },
+  {
+    "id": "str_hi_04",
+    "topic": "stress",
+    "language": "hi",
+    "header": "तनाव को ऊर्जा समझें",
+    "content": "शोध बताते हैं कि 'तनाव फायदेमंद है' यह सोचने से प्रदर्शन बेहतर होता है। किसी ज़रूरी काम से पहले घबराहट हो, तो सोचें — 'मेरा शरीर तैयार हो रहा है।' यह सोच बदलाव परफॉर्मेंस बढ़ाने वाले हार्मोन को एक्टिव करता है।"
+  },
+  {
+    "id": "str_mr_04",
+    "topic": "stress",
+    "language": "mr",
+    "header": "ताण म्हणजे ऊर्जा",
+    "content": "संशोधन सांगते की 'ताण उपयुक्त आहे' असे मानल्याने कामगिरी सुधारते. एखाद्या महत्त्वाच्या गोष्टीपूर्वी घाबरगुंडी झाली, तर विचार करा — 'माझे शरीर तयारी करतेय.' हा विचारबदल कामगिरी वाढवणारे हार्मोन सक्रिय करतो."
+  },
+  {
+    "id": "str_en_05",
+    "topic": "stress",
+    "language": "en",
+    "header": "The 'Could Be Worse' Ladder",
+    "content": "When stressed about something, ask: 'Is this a problem, a challenge, or a catastrophe?' Most daily stressors are problems — inconvenient but survivable. Accurately sizing the situation prevents your brain from treating every hurdle as an emergency."
+  },
+  {
+    "id": "str_hi_05",
+    "topic": "stress",
+    "language": "hi",
+    "header": "समस्या कितनी बड़ी है, सच में?",
+    "content": "जब कुछ बहुत तनावपूर्ण लगे, तो पूछें — 'यह समस्या है, चुनौती है, या बर्बादी है?' रोज़ के ज़्यादातर तनाव 'समस्याएं' हैं — असुविधाजनक, लेकिन झेलने लायक। हर बाधा को आपातकाल मत बनाएं — यही दिमाग को शांत रखता है।"
+  },
+  {
+    "id": "str_mr_05",
+    "topic": "stress",
+    "language": "mr",
+    "header": "समस्या किती मोठी आहे खरंच?",
+    "content": "एखादी गोष्ट खूप ताणाची वाटत असेल तर विचारा — 'ही समस्या आहे, आव्हान आहे, की आपत्ती?' रोजचे बहुतेक ताण 'समस्या' असतात — त्रासदायक, पण सहन करण्यासारखे. प्रत्येक अडथळ्याला आणीबाणी बनवू नका — यामुळे मन शांत राहते."
+  },
+  {
+    "id": "slp_en_01",
+    "topic": "sleep",
+    "language": "en",
+    "header": "Box Breathing for Sleep",
+    "content": "Inhale for 4 seconds, hold for 4 seconds, exhale for 4 seconds, and hold for 4 seconds. Repeat this 4 times. This rhythmic breathing signals your nervous system to relax and prepare for rest."
+  },
+  {
+    "id": "slp_hi_01",
+    "topic": "sleep",
+    "language": "hi",
+    "header": "बॉक्स ब्रीदिंग से नींद लाएं",
+    "content": "4 सेकंड सांस लें, 4 सेकंड रोकें, 4 सेकंड छोड़ें, और 4 सेकंड रुकें। इसे 4 बार दोहराएं। यह लयबद्ध सांस लेने का तरीका नसों को शांत करके नींद के लिए तैयार करता है।"
+  },
+  {
+    "id": "slp_mr_01",
+    "topic": "sleep",
+    "language": "mr",
+    "header": "बॉक्स ब्रीदिंगने झोप आणा",
+    "content": "४ सेकंद श्वास घ्या, ४ सेकंद थांबा, ४ सेकंद सोडा आणि ४ सेकंद थांबा. हे ४ वेळा करा. या लयबद्ध श्वासोच्छवासामुळे मज्जासंस्था शांत होते आणि शरीर झोपेसाठी तयार होते."
+  },
+  {
+    "id": "slp_en_02",
+    "topic": "sleep",
+    "language": "en",
+    "header": "Consistent Sleep Schedule",
+    "content": "Going to bed and waking at the same time — even on weekends — is the single most powerful thing you can do for sleep quality. Your body's internal clock thrives on consistency. Irregular schedules confuse it and leave you feeling groggy."
+  },
+  {
+    "id": "slp_hi_02",
+    "topic": "sleep",
+    "language": "hi",
+    "header": "एक तय समय पर सोना-जागना",
+    "content": "रोज़ एक ही समय पर सोना और उठना — यहां तक कि छुट्टी के दिन भी — नींद की गुणवत्ता के लिए सबसे असरदार तरीका है। आपकी बॉडी क्लॉक नियमितता से चलती है। अनियमित समय उसे उलझाता है और आप थके हुए उठते हैं।"
+  },
+  {
+    "id": "slp_mr_02",
+    "topic": "sleep",
+    "language": "mr",
+    "header": "ठराविक वेळी झोपा आणि उठा",
+    "content": "रोज एकाच वेळी झोपणे आणि उठणे — सुट्टीच्या दिवशीही — झोपेच्या गुणवत्तेसाठी सर्वात प्रभावी गोष्ट आहे. शरीराचे अंतर्गत घड्याळ नियमितपणाने चालते. अनियमितपणा ते बिघडवतो आणि सकाळी थकल्यासारखे वाटते."
+  },
+  {
+    "id": "slp_en_03",
+    "topic": "sleep",
+    "language": "en",
+    "header": "Screen-Free Wind-Down",
+    "content": "The blue light from phones tells your brain it's daytime, blocking melatonin. Try a 30-minute screen-free window before bed — read, stretch, or just sit quietly. This small habit can dramatically shorten the time it takes to fall asleep."
+  },
+  {
+    "id": "slp_hi_03",
+    "topic": "sleep",
+    "language": "hi",
+    "header": "सोने से पहले स्क्रीन बंद करें",
+    "content": "फोन की नीली रोशनी दिमाग को लगती है कि दिन है, जिससे नींद का हार्मोन ब्लॉक हो जाता है। सोने से 30 मिनट पहले स्क्रीन बंद रखें — किताब पढ़ें, हल्की स्ट्रेचिंग करें, या बस चुपचाप बैठें। यह नींद आने का समय काफी कम कर देता है।"
+  },
+  {
+    "id": "slp_mr_03",
+    "topic": "sleep",
+    "language": "mr",
+    "header": "झोपण्यापूर्वी स्क्रीन बंद करा",
+    "content": "फोनचा निळा प्रकाश मेंदूला वाटतो की दिवस आहे, त्यामुळे झोपेचा हार्मोन रोखला जातो. झोपण्याच्या ३० मिनिटे आधी स्क्रीन बंद करा — पुस्तक वाचा, हलके स्ट्रेचिंग करा, किंवा शांत बसा. ही छोटी सवय झोप येण्याचा वेळ खूप कमी करते."
+  },
+  {
+    "id": "slp_en_04",
+    "topic": "sleep",
+    "language": "en",
+    "header": "The Body Scan for Sleep",
+    "content": "Lie down and slowly move your attention from toes to head, noticing any tension without trying to fix it. This mindfulness practice distracts the thinking mind, relaxes the body quietly, and most people fall asleep before they even finish."
+  },
+  {
+    "id": "slp_hi_04",
+    "topic": "sleep",
+    "language": "hi",
+    "header": "बॉडी स्कैन से नींद बुलाएं",
+    "content": "लेट जाएं और धीरे-धीरे अपना ध्यान पैरों से सिर तक ले जाएं, बस तनाव को महसूस करें, ठीक करने की कोशिश मत करें। यह तरीका सोचते मन को भटकाता है और शरीर को धीरे-धीरे ढीला करता है — ज़्यादातर लोग पूरा होने से पहले ही सो जाते हैं।"
+  },
+  {
+    "id": "slp_mr_04",
+    "topic": "sleep",
+    "language": "mr",
+    "header": "बॉडी स्कॅनने झोप बोलवा",
+    "content": "आडवे व्हा आणि हळूहळू लक्ष पायापासून डोक्यापर्यंत न्या, फक्त ताण जाणवा, दुरुस्त करायचा नाही. ही माइंडफुलनेस पद्धत विचार करणाऱ्या मनाला वेगळे करते आणि शरीर हळूहळू शिथिल होते — बहुतेक लोक पूर्ण होण्यापूर्वीच झोपतात."
+  },
+  {
+    "id": "slp_en_05",
+    "topic": "sleep",
+    "language": "en",
+    "header": "Worry Offloading Before Bed",
+    "content": "Keep a small notebook by your bed. Before sleeping, jot down anything worrying you plus one tiny step you could take tomorrow. This 'closes the loop' in your brain and gives your mind permission to stop circling the same thoughts all night."
+  },
+  {
+    "id": "slp_hi_05",
+    "topic": "sleep",
+    "language": "hi",
+    "header": "सोने से पहले चिंताएं उतारें",
+    "content": "बिस्तर के पास एक छोटी नोटबुक रखें। सोने से पहले जो परेशानी हो उसे लिखें और कल उठाने वाला एक छोटा कदम भी। यह दिमाग का 'लूप बंद' करता है — फिर मन को रात भर उन्हीं विचारों पर घूमने की ज़रूरत नहीं रहती।"
+  },
+  {
+    "id": "slp_mr_05",
+    "topic": "sleep",
+    "language": "mr",
+    "header": "झोपण्यापूर्वी काळज्या उतरवा",
+    "content": "उशाशी एक छोटी वही ठेवा. झोपण्यापूर्वी जे काही मनात घोळत असेल ते लिहा आणि उद्या घेता येईल असे एक छोटे पाऊलही लिहा. यामुळे मेंदूचा 'लूप बंद' होतो आणि रात्रभर त्याच विचारात गुरफटण्याची गरज उरत नाही."
+  },
+  {
+    "id": "rel_en_01",
+    "topic": "relationship",
+    "language": "en",
+    "header": "Active Listening",
+    "content": "When someone is sharing something difficult, resist the urge to advise or fix. Instead, reflect back: 'It sounds like you're really exhausted by this.' People primarily need to feel understood, not solved. Listening well is the deepest form of care."
+  },
+  {
+    "id": "rel_hi_01",
+    "topic": "relationship",
+    "language": "hi",
+    "header": "सुनना असली प्यार है",
+    "content": "जब कोई अपनी परेशानी बताए, तो तुरंत सलाह देने की ज़रूरत नहीं। बस उनकी बात दोहराएं — 'लग रहा है तुम सच में बहुत थक गए हो।' लोग सुलझाया नहीं, समझा जाना चाहते हैं। ध्यान से सुनना सबसे गहरी देखभाल है।"
+  },
+  {
+    "id": "rel_mr_01",
+    "topic": "relationship",
+    "language": "mr",
+    "header": "ऐकणे म्हणजे खरी काळजी",
+    "content": "कोणी आपली अडचण सांगत असेल तर लगेच सल्ला देण्याची घाई नको. त्यांचे शब्द परत सांगा — 'असं वाटतंय की तू खरंच खूप दमला आहेस.' माणसांना सोडवलेले नाही, समजून घेतलेले हवे असते. नीट ऐकणे ही सर्वात खोल काळजी आहे."
+  },
+  {
+    "id": "rel_en_02",
+    "topic": "relationship",
+    "language": "en",
+    "header": "Repair After Arguments",
+    "content": "All relationships have conflict — what matters is the repair. A simple 'I'm sorry I raised my voice, I was stressed' goes a long way. You don't need to re-litigate who was right. A small repair gesture heals more than any debate victory."
+  },
+  {
+    "id": "rel_hi_02",
+    "topic": "relationship",
+    "language": "hi",
+    "header": "झगड़े के बाद जुड़ना ज़रूरी है",
+    "content": "हर रिश्ते में झगड़े होते हैं — मायने रखता है सुलह करना। 'माफ करना, मैं बहुत तनाव में था इसलिए आवाज़ उठ गई' — यह काफी है। कौन सही था इस पर बहस की ज़रूरत नहीं। एक छोटी सी सुलह हर बहस जीतने से बेहतर होती है।"
+  },
+  {
+    "id": "rel_mr_02",
+    "topic": "relationship",
+    "language": "mr",
+    "header": "भांडणानंतर जोडणे महत्त्वाचे",
+    "content": "प्रत्येक नात्यात भांडणे होतात — महत्त्वाचे आहे ते दुरुस्त करणे. 'माफ कर, मी ताणात होतो म्हणून आवाज चढला' — हे पुरेसे असते. कोण बरोबर होते यावर वाद नको. एक छोटी दुरुस्ती कोणतीही वादात जिंकण्यापेक्षा जास्त बरे करते."
+  },
+  {
+    "id": "rel_en_03",
+    "topic": "relationship",
+    "language": "en",
+    "header": "Expressing Needs Clearly",
+    "content": "Many relationship problems come from unexpressed needs. Practice saying clearly: 'I need some quiet time tonight' instead of hoping others will guess. People are not mind-readers. Clear, kind expression of your needs prevents resentment from building silently."
+  },
+  {
+    "id": "rel_hi_03",
+    "topic": "relationship",
+    "language": "hi",
+    "header": "अपनी ज़रूरत साफ बताएं",
+    "content": "रिश्तों की कई मुश्किलें अनकही ज़रूरतों से आती हैं। कहना सीखें — 'आज रात मुझे थोड़ा शांत समय चाहिए' — बजाय इसके कि कोई अंदाज़ा लगाए। कोई मन पढ़ नहीं सकता। साफ और प्यार से बताने से नाराज़गी धीरे-धीरे जमती नहीं है।"
+  },
+  {
+    "id": "rel_mr_03",
+    "topic": "relationship",
+    "language": "mr",
+    "header": "आपली गरज स्पष्ट सांगा",
+    "content": "नात्यातील अनेक समस्या न सांगितलेल्या गरजांमुळे होतात. स्पष्टपणे सांगणे शिका — 'आज रात मला थोडा शांत वेळ हवा आहे' — कोणी अंदाज लावेल याची वाट बघण्यापेक्षा. कोणी मन वाचू शकत नाही. प्रेमाने सांगितल्याने मनातील रुखरुख जमत नाही."
+  },
+  {
+    "id": "rel_en_04",
+    "topic": "relationship",
+    "language": "en",
+    "header": "Setting Limits with Care",
+    "content": "Setting a boundary is not punishment — it's self-respect. Try: 'I care about us, and I'm not okay with this. Can we find another way?' Boundaries said with warmth protect the relationship more than silent resentment or sudden explosions ever could."
+  },
+  {
+    "id": "rel_hi_04",
+    "topic": "relationship",
+    "language": "hi",
+    "header": "सीमा तय करना प्यार के खिलाफ नहीं",
+    "content": "सीमा तय करना सज़ा नहीं है — यह आत्मसम्मान है। कहें — 'मुझे हमारी परवाह है, पर यह मेरे लिए ठीक नहीं। कोई और रास्ता निकाल सकते हैं?' प्यार से कही गई सीमा रिश्ते की रक्षा करती है — चुप रहकर जलते रहने या अचानक फट पड़ने से कहीं बेहतर।"
+  },
+  {
+    "id": "rel_mr_04",
+    "topic": "relationship",
+    "language": "mr",
+    "header": "सीमा ठरवणे प्रेमाविरुद्ध नाही",
+    "content": "मर्यादा ठरवणे म्हणजे शिक्षा नाही — ते स्वाभिमान आहे. म्हणा — 'मला आपली काळजी आहे, पण हे मला मान्य नाही. दुसरा मार्ग काढता येईल का?' प्रेमाने सांगितलेली मर्यादा नाते जपते — आतून धुमसत राहण्यापेक्षा किंवा अचानक उसळण्यापेक्षा."
+  },
+  {
+    "id": "rel_en_05",
+    "topic": "relationship",
+    "language": "en",
+    "header": "Checking Assumptions",
+    "content": "Before assuming someone is ignoring or disrespecting you, check in with a simple: 'Hey, is everything okay between us?' Many conflicts are born from misread silences and imagined intentions. One honest question can prevent days of unnecessary hurt."
+  },
+  {
+    "id": "rel_hi_05",
+    "topic": "relationship",
+    "language": "hi",
+    "header": "अंदाज़े पर भरोसा मत करें",
+    "content": "कोई आपको नज़रअंदाज़ कर रहा है यह मान लेने से पहले, बस एक बार पूछें — 'यार, सब ठीक है ना हम दोनों के बीच?' कई झगड़े सिर्फ गलत मान लेने से होते हैं। एक सीधा सवाल कई दिनों की बेवजह तकलीफ से बचा सकता है।"
+  },
+  {
+    "id": "rel_mr_05",
+    "topic": "relationship",
+    "language": "mr",
+    "header": "अंदाजावर विश्वास ठेवू नका",
+    "content": "कोणी तुम्हाला दुर्लक्षित करतोय असे वाटल्यास, एकदा साध विचारा — 'अरे, आपल्यात सगळं ठीक आहे ना?' अनेक भांडणे चुकीच्या समजुतींमुळे होतात. एक प्रामाणिक प्रश्न अनेक दिवसांचे नको ते दुखणे टाळू शकतो."
+  },
+  {
+    "id": "aca_en_01",
+    "topic": "academic",
+    "language": "en",
+    "header": "The Pomodoro Technique",
+    "content": "Study for 25 minutes, then take a 5-minute break. After four rounds, take a longer 20-minute break. This works because the brain holds focus best in short, defined chunks. The break isn't a reward — it's what makes the next round possible."
+  },
+  {
+    "id": "aca_hi_01",
+    "topic": "academic",
+    "language": "hi",
+    "header": "पोमोडोरो तकनीक से पढ़ें",
+    "content": "25 मिनट पढ़ें, फिर 5 मिनट का ब्रेक लें। चार बार यह करने के बाद 20 मिनट का लंबा ब्रेक लें। दिमाग छोटे-छोटे हिस्सों में सबसे अच्छे से ध्यान लगाता है। ब्रेक इनाम नहीं है — यही अगले राउंड को मुमकिन बनाता है।"
+  },
+  {
+    "id": "aca_mr_01",
+    "topic": "academic",
+    "language": "mr",
+    "header": "पोमोडोरो तंत्राने अभ्यास करा",
+    "content": "२५ मिनिटे अभ्यास करा, मग ५ मिनिटे ब्रेक. चार फेऱ्यांनंतर २० मिनिटांचा मोठा ब्रेक घ्या. मेंदू लहान ठराविक भागांत सर्वोत्तम लक्ष केंद्रित करतो. ब्रेक बक्षीस नाही — तेच पुढचा राउंड शक्य करते."
+  },
+  {
+    "id": "aca_en_02",
+    "topic": "academic",
+    "language": "en",
+    "header": "Active Recall over Re-Reading",
+    "content": "Instead of reading notes again, close them and try to recall everything you just read. Then check. This retrieval practice is scientifically proven to be up to twice as effective as passive re-reading. It's harder, but that difficulty is exactly what cements memory."
+  },
+  {
+    "id": "aca_hi_02",
+    "topic": "academic",
+    "language": "hi",
+    "header": "दोबारा पढ़ने से बेहतर है याद करना",
+    "content": "नोट्स दोबारा पढ़ने की जगह उन्हें बंद करें और जो पढ़ा वो याद करके लिखें। फिर जांचें। यह तरीका विज्ञान के अनुसार दोबारा पढ़ने से दोगुना असरदार है। मुश्किल लगेगा, लेकिन यही मुश्किल याददाश्त पक्की करती है।"
+  },
+  {
+    "id": "aca_mr_02",
+    "topic": "academic",
+    "language": "mr",
+    "header": "पुन्हा वाचण्यापेक्षा आठवणे जास्त प्रभावी",
+    "content": "नोट्स पुन्हा वाचण्याऐवजी त्या बंद करा आणि जे वाचले ते आठवून लिहायचा प्रयत्न करा. मग तपासा. हे तंत्र वैज्ञानिकदृष्ट्या पुन्हा वाचण्यापेक्षा दुप्पट प्रभावी आहे. कठीण वाटेल, पण हीच कठिणाई स्मृती पक्की करते."
+  },
+  {
+    "id": "aca_en_03",
+    "topic": "academic",
+    "language": "en",
+    "header": "Managing Exam Anxiety",
+    "content": "Before an exam, try writing for 10 minutes about your worries. Research by psychologist Sian Beilock shows this 'expressive writing' offloads anxiety from working memory, freeing up mental space to actually perform on the test."
+  },
+  {
+    "id": "aca_hi_03",
+    "topic": "academic",
+    "language": "hi",
+    "header": "परीक्षा से पहले चिंता लिखें",
+    "content": "परीक्षा से पहले 10 मिनट अपनी घबराहट के बारे में लिखें। शोध बताते हैं कि यह 'एक्सप्रेसिव राइटिंग' दिमाग की चिंता को बाहर निकाल देती है, जिससे परीक्षा में सोचने के लिए मानसिक जगह खुल जाती है।"
+  },
+  {
+    "id": "aca_mr_03",
+    "topic": "academic",
+    "language": "mr",
+    "header": "परीक्षेपूर्वी घाबरगुंडी लिहा",
+    "content": "परीक्षेपूर्वी १० मिनिटे आपल्या घाबरगुंडीबद्दल लिहा. संशोधन सांगते की हे 'एक्सप्रेसिव्ह रायटिंग' मेंदूतील चिंता बाहेर काढते, ज्यामुळे परीक्षेत विचार करायला मानसिक जागा मोकळी होते."
+  },
+  {
+    "id": "aca_en_04",
+    "topic": "academic",
+    "language": "en",
+    "header": "Breaking Down Big Tasks",
+    "content": "A huge assignment feels impossible until you break it into the smallest possible steps. Instead of 'write essay,' write 'open a blank doc and type one sentence.' The brain finds tiny steps easy to start. Starting is the hardest part — make it ridiculously easy."
+  },
+  {
+    "id": "aca_hi_04",
+    "topic": "academic",
+    "language": "hi",
+    "header": "बड़े काम को छोटे टुकड़ों में तोड़ें",
+    "content": "कोई बड़ा असाइनमेंट असंभव लगता है जब तक उसे सबसे छोटे कदमों में न तोड़ें। 'निबंध लिखो' नहीं, बल्कि 'एक खाली पेज खोलो और एक लाइन लिखो।' दिमाग छोटे कदम आसानी से शुरू करता है। शुरू करना सबसे मुश्किल है — उसे हास्यास्पद रूप से आसान बना दें।"
+  },
+  {
+    "id": "aca_mr_04",
+    "topic": "academic",
+    "language": "mr",
+    "header": "मोठे काम छोट्या तुकड्यांत विभागा",
+    "content": "एखादा मोठा असाइनमेंट अशक्य वाटतो जोपर्यंत सर्वात छोट्या पायऱ्यांत मोडत नाही. 'निबंध लिहा' नाही, तर 'रिकामा डॉक उघडा आणि एक वाक्य टाइप करा.' मेंदू छोट्या पायऱ्या सहज सुरू करतो. सुरुवात सर्वात कठीण — ती हास्यास्पद सोपी करा."
+  },
+  {
+    "id": "aca_en_05",
+    "topic": "academic",
+    "language": "en",
+    "header": "Growth Mindset for Mistakes",
+    "content": "When you get something wrong, try replacing 'I'm bad at this' with 'I haven't learned this yet.' Carol Dweck's research shows this single shift — adding 'yet' — changes how the brain responds to failure, making you more resilient and persistent."
+  },
+  {
+    "id": "aca_hi_05",
+    "topic": "academic",
+    "language": "hi",
+    "header": "'अभी नहीं आता' — 'अभी तक नहीं आता'",
+    "content": "जब कुछ गलत हो जाए, 'मुझे यह नहीं आता' की जगह कहें — 'मुझे यह अभी तक नहीं आता।' यह एक छोटा बदलाव दिमाग को गलतियों से सीखने के लिए तैयार करता है और आगे बढ़ने की हिम्मत बनाए रखता है।"
+  },
+  {
+    "id": "aca_mr_05",
+    "topic": "academic",
+    "language": "mr",
+    "header": "'मला येत नाही' नाही — 'अजून येत नाही'",
+    "content": "काही चुकले तेव्हा 'मला हे जमत नाही' ऐवजी म्हणा — 'मला हे अजून जमत नाही.' हा एकच बदल मेंदूला चुकांमधून शिकण्यासाठी तयार करतो आणि पुढे जाण्याचे धाडस टिकवतो."
+  },
+  {
+    "id": "gen_en_01",
+    "topic": "general_support",
+    "language": "en",
+    "header": "You Don't Have to Fix It Right Now",
+    "content": "Not everything needs an immediate solution. Sometimes the most helpful thing is to acknowledge: 'This is hard, and it's okay that it's hard.' Giving yourself permission to feel what you feel — without rushing to fix it — is its own form of healing."
+  },
+  {
+    "id": "gen_hi_01",
+    "topic": "general_support",
+    "language": "hi",
+    "header": "अभी सब ठीक करना ज़रूरी नहीं",
+    "content": "हर चीज़ का तुरंत हल ज़रूरी नहीं। कभी-कभी सबसे ज़रूरी बात यह मानना है — 'यह कठिन है, और यह ठीक है।' जो महसूस हो रहा है उसे बिना जल्दी ठीक किए महसूस करने देना — यह भी ठीक होने का एक तरीका है।"
+  },
+  {
+    "id": "gen_mr_01",
+    "topic": "general_support",
+    "language": "mr",
+    "header": "आत्ता सगळे ठीक करायला नको",
+    "content": "प्रत्येक गोष्टीचे तात्काळ उत्तर हवेच असे नाही. कधीकधी सर्वात महत्त्वाचे म्हणजे मान्य करणे — 'हे कठीण आहे, आणि ते असणे ठीक आहे.' जे वाटतेय ते घाईने दुरुस्त न करता जाणवू देणे — हेही बरे होण्याचा एक मार्ग आहे."
+  },
+  {
+    "id": "gen_en_02",
+    "topic": "general_support",
+    "language": "en",
+    "header": "The Power of Small Acts of Self-Care",
+    "content": "Self-care doesn't have to be a spa day. Drinking a glass of water, stepping outside for a minute, or eating something warm — these small acts signal to your body and mind that you matter. Consistency in small things builds real resilience over time."
+  },
+  {
+    "id": "gen_hi_02",
+    "topic": "general_support",
+    "language": "hi",
+    "header": "छोटी देखभाल, बड़ा असर",
+    "content": "खुद की देखभाल के लिए महंगे स्पा की ज़रूरत नहीं। एक गिलास पानी पीना, बाहर एक मिनट निकलना, या गर्म कुछ खाना — यह छोटी-छोटी बातें शरीर और मन को बताती हैं कि आप अहम हैं। रोज़ की ये छोटी आदतें धीरे-धीरे मज़बूत बनाती हैं।"
+  },
+  {
+    "id": "gen_mr_02",
+    "topic": "general_support",
+    "language": "mr",
+    "header": "छोटी काळजी, मोठा परिणाम",
+    "content": "स्वतःची काळजी घेण्यासाठी महागड्या स्पाची गरज नाही. एक ग्लास पाणी पिणे, एक मिनिट बाहेर जाणे, किंवा उबदार काहीतरी खाणे — या छोट्या गोष्टी शरीर आणि मनाला सांगतात की तुम्ही महत्त्वाचे आहात. रोजच्या या छोट्या सवयी हळूहळू खंबीरपणा बांधतात."
+  },
+  {
+    "id": "gen_en_03",
+    "topic": "general_support",
+    "language": "en",
+    "header": "It's Okay to Ask for Help",
+    "content": "Reaching out is not weakness — it takes real courage to say 'I'm not okay.' Whether it's a friend, a family member, or a counselor, talking to someone who listens can lighten a burden that feels impossible to carry alone. You don't have to do this by yourself."
+  },
+  {
+    "id": "gen_hi_03",
+    "topic": "general_support",
+    "language": "hi",
+    "header": "मदद मांगना कमज़ोरी नहीं",
+    "content": "मदद मांगना कमज़ोरी नहीं — 'मैं ठीक नहीं हूं' कहने में असली हिम्मत लगती है। चाहे दोस्त हो, परिवार हो, या काउंसलर — किसी से बात करना वो बोझ हल्का कर सकता है जो अकेले उठाना मुश्किल लगता है। यह सब अकेले करने की ज़रूरत नहीं है।"
+  },
+  {
+    "id": "gen_mr_03",
+    "topic": "general_support",
+    "language": "mr",
+    "header": "मदत मागणे दुर्बलपणा नाही",
+    "content": "मदत मागणे दुर्बलपणा नाही — 'मी ठीक नाही' हे सांगण्यात खरे धाडस आहे. मित्र असो, कुटुंब असो, किंवा समुपदेशक — कोणाशी बोलणे एकट्याने उचलायला कठीण वाटणारे ओझे हलके करू शकते. हे सगळे एकट्याने करायची गरज नाही."
+  },
+  {
+    "id": "gen_en_04",
+    "topic": "general_support",
+    "language": "en",
+    "header": "Noticing What's Working",
+    "content": "When everything feels wrong, deliberately look for something that is still working — even if it's tiny. Your body got you through today. Something made you smile. Training the mind to notice what's intact builds the foundation for getting through harder stretches."
+  },
+  {
+    "id": "gen_hi_04",
+    "topic": "general_support",
+    "language": "hi",
+    "header": "क्या सही चल रहा है, उसे भी देखें",
+    "content": "जब सब गलत लगे, तो जानबूझकर कुछ ऐसा ढूंढें जो अभी भी ठीक है — चाहे कितना ही छोटा हो। आपका शरीर आज भी आपको यहां तक लाया। कुछ न कुछ आपको मुस्कुराया भी होगा। जो सही है उसे देखना मुश्किल वक्त से गुज़रने की नींव बनाता है।"
+  },
+  {
+    "id": "gen_mr_04",
+    "topic": "general_support",
+    "language": "mr",
+    "header": "काय ठीक आहे तेही पहा",
+    "content": "सगळे चुकीचे वाटत असेल तेव्हा जाणूनबुजून असे काहीतरी शोधा जे अजूनही ठीक आहे — कितीही छोटे असले तरी. तुमचे शरीर आज तुम्हाला इथपर्यंत घेऊन आले. कशाने तरी हसलाही असाल. जे व्यवस्थित आहे ते बघणे कठीण काळातून पुढे जाण्याचा पाया घालते."
+  },
+  {
+    "id": "gen_en_05",
+    "topic": "general_support",
+    "language": "en",
+    "header": "Progress, Not Perfection",
+    "content": "You don't have to have it all figured out. Healing and growth are not straight lines — they zigzag, stall, and loop back. A 'bad day' after several good ones doesn't erase your progress. What matters is that you keep showing up, however imperfectly."
+  },
+  {
+    "id": "gen_hi_05",
+    "topic": "general_support",
+    "language": "hi",
+    "header": "परफेक्ट नहीं, बस आगे बढ़ते रहें",
+    "content": "सब कुछ समझ लेना ज़रूरी नहीं। ठीक होना और बढ़ना सीधी रेखा में नहीं चलता — यह उलटा-सीधा चलता है, रुकता है, पीछे भी जाता है। कुछ अच्छे दिनों के बाद एक बुरा दिन आपकी कोशिश को मिटाता नहीं। ज़रूरी बस यह है कि आप आते रहें — चाहे कैसे भी।"
+  },
+  {
+    "id": "gen_mr_05",
+    "topic": "general_support",
+    "language": "mr",
+    "header": "परफेक्ट नाही, फक्त पुढे जात राहा",
+    "content": "सगळे समजून घेणे गरजेचे नाही. बरे होणे आणि वाढणे सरळ रेषेत होत नाही — ते वळणावळणाने, थांबत, मागे जात चालते. काही चांगल्या दिवसांनंतर एक वाईट दिवस तुमची प्रगती पुसत नाही. महत्त्वाचे फक्त एवढे की तुम्ही येत राहता — कसेही असले तरी."
+  }
+]

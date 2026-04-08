@@ -19,6 +19,8 @@ numpy==1.26.4
 torch==2.9.0
 transformers==4.45.2
 sentencepiece==0.2.1
+sentence-transformers==3.3.1
+chromadb==0.5.23
 
 # --- Indic language translation ---
 IndicTransToolkit==1.1.1

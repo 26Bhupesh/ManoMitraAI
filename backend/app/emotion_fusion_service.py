@@ -21,8 +21,8 @@ router = APIRouter()
 # CONFIGURATION
 
 BASE_WEIGHTS = {
-    "text": 0.3,
-    "voice": 0.4,
+    "text": 0.4,
+    "voice": 0.3,
     "video": 0.3
 }
 
