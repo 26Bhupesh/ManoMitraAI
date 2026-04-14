@@ -133,6 +133,32 @@ def get_consecutive_short_replies(session_id: str) -> int:
     return cnt if isinstance(cnt, int) else 0
 
 
+# ---------------- Active Technique Session Helpers ----------------
+
+def get_active_technique_from_store(session_id: str) -> dict | None:
+    """
+    Get the currently active technique block for a session directly from the store.
+    Returns {"header": str, "content": str} or None.
+    Used by external callers that only have session_id, not a pre-loaded session dict.
+    """
+    store = _load_store()
+    session = store.get(session_id, {})
+    active = session.get("active_technique", {}).get("value")
+    if active and isinstance(active, dict) and active.get("header"):
+        return active
+    return None
+
+
+def get_active_technique_turn_from_store(session_id: str) -> int:
+    """
+    Get the follow-through turn counter for the active technique directly from the store.
+    Used by external callers that only have session_id.
+    """
+    store = _load_store()
+    session = store.get(session_id, {})
+    val = session.get("active_technique_turn", {}).get("value", 0)
+    return val if isinstance(val, int) else 0
+
 
 def logout_session(session_id: str):
     """Clear authentication from a session."""
