@@ -29,7 +29,7 @@ export default function Register() {
     date_of_birth: "",
     preferred_language: "en" as Language,
     emergency_contact_name: "",
-    emergency_contact_number: "",
+    emergency_contact_email: "",
     emergency_contact_relation: "",
   });
 
@@ -62,7 +62,7 @@ export default function Register() {
         "password",
         "date_of_birth",
         "emergency_contact_name",
-        "emergency_contact_number",
+        "emergency_contact_email",
         "emergency_contact_relation",
       ];
 
@@ -220,14 +220,14 @@ export default function Register() {
               />
             </div>
 
-            {/* Emergency Contact Number */}
+            {/* Emergency Contact Email */}
             <div className="space-y-1">
-              <label className="text-sm font-medium">Emergency Contact Number</label>
+              <label className="text-sm font-medium">Emergency Contact Email</label>
               <Input
-                type="tel"
-                name="emergency_contact_number"
-                placeholder="Enter phone number"
-                value={formData.emergency_contact_number}
+                type="email"
+                name="emergency_contact_email"
+                placeholder="Enter email address"
+                value={formData.emergency_contact_email}
                 onChange={handleInputChange}
                 disabled={loading}
               />

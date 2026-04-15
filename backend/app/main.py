@@ -93,7 +93,7 @@ class RegisterRequest(BaseModel):
     date_of_birth: str  # YYYY-MM-DD format
     preferred_language: str  # "en", "hi", or "mr"
     emergency_contact_name: str
-    emergency_contact_number: str
+    emergency_contact_email: str
     emergency_contact_relation: str
 
 class LoginRequest(BaseModel):
@@ -160,7 +160,7 @@ def _create_user(user_info: RegisterRequest) -> dict:
             "date_of_birth": user_info.date_of_birth,
             "preferred_language": user_info.preferred_language,
             "emergency_contact_name": user_info.emergency_contact_name,
-            "emergency_contact_number": user_info.emergency_contact_number,
+            "emergency_contact_email": user_info.emergency_contact_email,
             "emergency_contact_relation": user_info.emergency_contact_relation,
             "created_at": datetime.utcnow().isoformat(),
         }

@@ -37,7 +37,7 @@ export interface RegisterRequest {
   date_of_birth: string;
   preferred_language: Language;
   emergency_contact_name: string;
-  emergency_contact_number: string;
+  emergency_contact_email: string;
   emergency_contact_relation: string;
 }
 
@@ -84,7 +84,11 @@ export interface RouteResponse {
 }
 
 export interface CrisisResponse {
+  session_id: string;
   crisis_level: "moderate" | "high";
   action: string;
   reason: string;
+  notification_sent: boolean;
+  notification_channel: string;
+  timestamp: string;
 }

@@ -50,11 +50,11 @@ const CrisisPanel = ({ data, onContinue }: Props) => {
           </div>
 
           <p className="mb-3 text-sm leading-relaxed text-foreground">
-            {data.reason}
+            {t(`crisis_reason_${data.reason}`)}
           </p>
-          <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+          {/* <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
             {data.action}
-          </p>
+          </p> */}
 
           <div className="mb-5 rounded-xl bg-muted p-4">
             <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
