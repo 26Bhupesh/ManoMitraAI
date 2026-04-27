@@ -7,11 +7,10 @@
 ![React](https://img.shields.io/badge/React-18+-61DAFB?style=flat-square&logo=react)
 ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat-square&logo=fastapi)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript)
-![License](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)
 
 **A comprehensive AI-powered mental health support platform combining advanced emotion detection, crisis intervention, and personalized psychological screening.**
 
-[🚀 Live Demo](#) • [📖 Documentation](#) • [🛠️ Setup Guide](#setup) • [🤝 Contributing](#contributing)
+[🚀 Live Demo](#) • [📖 Documentation](#) • [🛠️ Setup Guide](#setup)
 
 </div>
 
@@ -26,9 +25,6 @@
 - [📖 User Manual](#-user-manual)
 - [🔧 API Documentation](#-api-documentation)
 - [🧪 Testing](#-testing)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-- [👥 Team](#-team)
 
 ---
 
@@ -134,22 +130,22 @@ ManoMitraAI/
 ### 🏛️ System Architecture
 
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+┌─────────────────┐     ┌─────────────────┐    ┌─────────────────┐
 │   User Input    │───▶│  Preprocessing  │───▶│ Emotion Analysis│
-│ (Text/Voice/    │    │   Service       │    │   Services      │
-│  Video)         │    │                 │    │                 │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
+│ (Text/Voice/    │     │   Service       │    │   Services      │
+│  Video)         │     │                 │    │                 │
+└─────────────────┘     └─────────────────┘    └─────────────────┘
                                                         │
-┌─────────────────┐    ┌─────────────────┐             │
+┌─────────────────┐     ┌─────────────────┐             │
 │ Crisis Detection│◀───│  Emotion Fusion │◀────────────┘
-│   & Response    │    │   Service       │
-└─────────────────┘    └─────────────────┘
+│   & Response    │     │   Service       │
+└─────────────────┘     └─────────────────┘
          │
          ▼
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│ Support Service │───▶│ Chat           │───▶│   User          │
-│ (Knowledge Base)│    │ Orchestrator   │    │   Response      │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
+┌─────────────────┐     ┌─────────────────┐    ┌─────────────────┐
+│ Support Service │───▶│ Chat            │───▶│   User          │
+│ (Knowledge Base)│     │ Orchestrator    │    │   Response      │
+└─────────────────┘     └─────────────────┘    └─────────────────┘
 ```
 
 ---
@@ -167,7 +163,7 @@ ManoMitraAI/
 
 #### 1. Clone Repository
 ```bash
-git clone https://github.com/yourusername/ManoMitraAI.git
+git clone https://github.com/26Bhupesh/ManoMitraAI.git
 cd ManoMitraAI
 ```
 
@@ -405,59 +401,7 @@ See `backend/Endpoint Testing.txt` for comprehensive API test examples.
 
 ---
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
-
-### Development Workflow
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m 'Add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
-
-### Code Standards
-- **Backend**: PEP 8 Python style guide
-- **Frontend**: ESLint + Prettier configuration
-- **Commits**: Conventional commit format
-- **Testing**: 80%+ code coverage required
-
-### Areas for Contribution
-- 🤖 ML Model improvements
-- 🌐 Additional language support
-- 📊 Enhanced screening tools
-- 🎨 UI/UX enhancements
-- 📚 Knowledge base expansion
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 👥 Team
-
-**ManoMitra AI Development Team**
-
-- **Project Lead**: [Your Name]
-- **Backend Development**: [Team Members]
-- **Frontend Development**: [Team Members]
-- **ML/AI Engineering**: [Team Members]
-- **UI/UX Design**: [Team Members]
-
-### Acknowledgments
-
-- **Academic Advisors**: For guidance and mentorship
-- **Mental Health Professionals**: For content validation
-- **Open Source Community**: For amazing tools and libraries
-
----
-
 <div align="center">
-
-**Made with ❤️ for mental health awareness and support**
 
 [⬆️ Back to Top](#-manoMitra-ai---intelligent-mental-health-support-system)
 
